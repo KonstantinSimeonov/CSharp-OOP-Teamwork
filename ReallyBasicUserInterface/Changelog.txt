@@ -1,0 +1,3 @@
+Tima-t: initial commit, created the form, supplied and put in all basic resources, made the skeleton for the UI
+
+Konstantin: removed maximizeability and resizeability, made the window and the playboard larger, added picture box for selected card

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CardGame));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -55,7 +56,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::test.Properties.Resources.usethis1;
-            this.pictureBox2.Location = new System.Drawing.Point(290, -13);
+            this.pictureBox2.Location = new System.Drawing.Point(650, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(66, 79);
             this.pictureBox2.TabIndex = 1;
@@ -64,7 +65,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::test.Properties.Resources.usethis1;
-            this.pictureBox1.Location = new System.Drawing.Point(78, -13);
+            this.pictureBox1.Location = new System.Drawing.Point(438, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(66, 79);
             this.pictureBox1.TabIndex = 2;
@@ -73,7 +74,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::test.Properties.Resources.usethis1;
-            this.pictureBox3.Location = new System.Drawing.Point(150, -13);
+            this.pictureBox3.Location = new System.Drawing.Point(510, 12);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(66, 79);
             this.pictureBox3.TabIndex = 3;
@@ -82,7 +83,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::test.Properties.Resources.usethis1;
-            this.pictureBox4.Location = new System.Drawing.Point(222, -13);
+            this.pictureBox4.Location = new System.Drawing.Point(582, 12);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(66, 79);
             this.pictureBox4.TabIndex = 4;
@@ -93,7 +94,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::test.Properties.Resources.usethis1;
-            this.pictureBox5.Location = new System.Drawing.Point(362, -13);
+            this.pictureBox5.Location = new System.Drawing.Point(722, 12);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(66, 79);
             this.pictureBox5.TabIndex = 5;
@@ -102,7 +103,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::test.Properties.Resources.usethisOpen;
-            this.pictureBox6.Location = new System.Drawing.Point(362, 439);
+            this.pictureBox6.Location = new System.Drawing.Point(722, 597);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(66, 84);
             this.pictureBox6.TabIndex = 6;
@@ -114,7 +115,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::test.Properties.Resources.usethisOpen;
-            this.pictureBox7.Location = new System.Drawing.Point(78, 439);
+            this.pictureBox7.Location = new System.Drawing.Point(438, 597);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(66, 84);
             this.pictureBox7.TabIndex = 7;
@@ -123,7 +124,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::test.Properties.Resources.usethisOpen;
-            this.pictureBox8.Location = new System.Drawing.Point(150, 439);
+            this.pictureBox8.Location = new System.Drawing.Point(510, 597);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(66, 84);
             this.pictureBox8.TabIndex = 8;
@@ -132,7 +133,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::test.Properties.Resources.usethisOpen;
-            this.pictureBox9.Location = new System.Drawing.Point(222, 439);
+            this.pictureBox9.Location = new System.Drawing.Point(582, 597);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(66, 84);
             this.pictureBox9.TabIndex = 9;
@@ -141,7 +142,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = global::test.Properties.Resources.usethisOpen;
-            this.pictureBox10.Location = new System.Drawing.Point(294, 439);
+            this.pictureBox10.Location = new System.Drawing.Point(654, 597);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(66, 84);
             this.pictureBox10.TabIndex = 10;
@@ -150,9 +151,10 @@
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Location = new System.Drawing.Point(362, 289);
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(12, 86);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(66, 77);
+            this.pictureBox11.Size = new System.Drawing.Size(200, 300);
             this.pictureBox11.TabIndex = 11;
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
@@ -162,8 +164,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::test.Properties.Resources._5WPLWxn;
-            this.ClientSize = new System.Drawing.Size(517, 522);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1003, 683);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox9);
@@ -175,9 +177,11 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CardGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "UI Demo";
             this.Load += new System.EventHandler(this.CardGame_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
