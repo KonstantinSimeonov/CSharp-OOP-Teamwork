@@ -1,6 +1,7 @@
 ﻿namespace SampleInterfaces
 {
     using System.Collections.Generic;
+    using Skeleton.Cards;
 
     public enum SampleType 
     { 
@@ -12,8 +13,6 @@
     {
         string Name { get; } // every card should have a name
         string Description { get; }
-
-        void Play(); // every card should be somehow be put on the field
     }
 
     // We may implement different card placement - some could be placed face up(attack mode or straight effect),
@@ -47,7 +46,7 @@
         void ChangePosition();
     }
 
-    public interface ISpecialCard : IMonsterCard // special monster will have an effect
+    public interface ISpecialCard // special cards will have an effect
     {
         void ApplyEffect();
     }
@@ -72,7 +71,20 @@
         void PlayCard(ICard card); // the player can play cards
     }
 
-    public interface IEngine
+    public interface IBoard
+    {
+        IList<IMonsterCard> PlayersMonsters { get; }
+        IList<IMonsterCard> AIMonsters { get; }
+        IList<EffectCard> PlayerEffectCards { get; }
+        IList<EffectCard> AIEffectCards { get; }
+        IDeck PlayerDeck { get; }
+        IDeck AIDeck { get; }
+        IList<ICard> PlayerGraveyard { get; }
+        IList<ICard> AIGraveyard { get; }
+        
+    }
+
+    public interface IEngine // one of the last things to implement
     {
         void Run();
     }

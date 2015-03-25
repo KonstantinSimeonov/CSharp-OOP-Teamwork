@@ -3,21 +3,27 @@
     using System;
     using SampleInterfaces;
 
-    public abstract class Card : ICard
+    public abstract class Card : ICard, IFaceDownCard
     {
+
         public string Name
         {
-            get { throw new System.NotImplementedException(); }
+            get { throw new NotImplementedException(); }
         }
 
         public string Description
         {
-            get { throw new System.NotImplementedException(); }
+            get { throw new NotImplementedException(); }
         }
 
-        public void Play()
+        public void SetDown()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
+        }
+
+        public void Flip()
+        {
+            throw new NotImplementedException();
         }
     }
 }

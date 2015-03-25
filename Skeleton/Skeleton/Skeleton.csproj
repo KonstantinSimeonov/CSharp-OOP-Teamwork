@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Board\Board.cs" />
     <Compile Include="Cards\Card.cs" />
     <Compile Include="Cards\Deck.cs" />
+    <Compile Include="Cards\EffectCard.cs" />
     <Compile Include="Cards\EquipSpellCard.cs" />
     <Compile Include="Cards\FieldSpellCard.cs" />
     <Compile Include="Engine\Engine.cs" />
@@ -60,7 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="SkeletonDiagram.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
