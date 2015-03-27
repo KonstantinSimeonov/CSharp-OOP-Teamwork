@@ -29,11 +29,6 @@
             throw new System.NotImplementedException();
         }
 
-        public void SetUp()
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void SetDown()
         {
             throw new System.NotImplementedException();
@@ -45,6 +40,11 @@
         }
 
         public void ApplyEffect()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void Play()
         {
             throw new System.NotImplementedException();
         }

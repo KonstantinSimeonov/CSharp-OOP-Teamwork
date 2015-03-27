@@ -16,6 +16,8 @@
             get { throw new NotImplementedException(); }
         }
 
+        public abstract void Play();
+
         public void SetDown()
         {
             throw new NotImplementedException();

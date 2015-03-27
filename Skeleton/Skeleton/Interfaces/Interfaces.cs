@@ -13,6 +13,7 @@
     {
         string Name { get; } // every card should have a name
         string Description { get; }
+        void Play();
     }
 
     // We may implement different card placement - some could be placed face up(attack mode or straight effect),
