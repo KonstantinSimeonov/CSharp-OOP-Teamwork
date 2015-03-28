@@ -9,5 +9,6 @@ namespace CardCademyGame.Interfaces
     public interface IAttacking
     {
         int Damage { get; set; }
+        void Attack(string targetName);
     }
 }

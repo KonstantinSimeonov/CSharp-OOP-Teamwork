@@ -1,17 +1,37 @@
 ﻿namespace Skeleton.Cards
 {
     using SampleInterfaces;
+    using System.Collections.Generic;
 
     public class Deck : IDeck
     {
-        public System.Collections.Generic.IList<ICard> Hand
+        private IList<ICard> cards;
+
+        public Deck()
         {
-            get { throw new System.NotImplementedException(); }
+            this.Cards = new List<ICard>();
+        }
+
+        public int CardsRemaining
+        {
+            get { return cards.Count; }
+        }
+
+        public IList<ICard> Cards
+        {
+            get { return new List<ICard>(cards); }
+            private set { cards = value; }
         }
 
         public ICard NextCard()
         {
-            throw new System.NotImplementedException();
+            if (this.CardsRemaining == 0)
+            {
+                // GAME OVER EVENT
+            }
+            var nextCard = cards[0];
+            cards.RemoveAt(0);
+            return nextCard;
         }
     }
 }

@@ -48,5 +48,11 @@
         {
             throw new System.NotImplementedException();
         }
+
+
+        public bool Position
+        {
+            get { throw new System.NotImplementedException(); }
+        }
     }
 }

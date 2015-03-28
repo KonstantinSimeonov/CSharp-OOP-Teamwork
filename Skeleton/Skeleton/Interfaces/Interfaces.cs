@@ -9,6 +9,12 @@
         Student
     } // sample monster types
 
+    public interface IParsable
+    {
+        string Path { get; }
+        void Parse(string path);
+    }
+
     public interface ICard
     {
         string Name { get; } // every card should have a name
@@ -21,6 +27,7 @@
 
     public interface IFaceDownCard : ICard // some cards will be only face-down settable(like trap cards)
     {
+        bool FaceUp { get; }
         void SetDown(); // card that can be placed face-down should have such a method
         void Flip(); // the card should support an operation to flip it face-up
     }
@@ -42,6 +49,7 @@
         int AttackPoints { get; }
         int DefensePoint { get; }
         SampleType Type { get; }
+        bool Position { get; }
 
         void Attack(IMonsterCard monster);
         void ChangePosition();
@@ -52,9 +60,14 @@
         void ApplyEffect();
     }
 
+    public interface IManaCostable : IFaceDownCard, ISpecialCard
+    {
+        int ManaCost { get; }
+    }
+
     public interface IDeck
     {
-        IList<ICard> Hand { get; }
+        IList<ICard> Cards { get; }
         ICard NextCard();
     }
 
@@ -67,7 +80,9 @@
     public interface IPlayer
     {
         int LifePoints { get; }
+        int ManaPoints { get; }
         IList<ICard> Hand { get; } // the player needs a list of card as hand
+        IDeck Deck { get; }
         void Draw(); // the player can draw cards
         void PlayCard(ICard card); // the player can play cards
     }
@@ -76,8 +91,8 @@
     {
         IList<IMonsterCard> PlayersMonsters { get; }
         IList<IMonsterCard> AIMonsters { get; }
-        IList<EffectCard> PlayerEffectCards { get; }
-        IList<EffectCard> AIEffectCards { get; }
+        IList<IManaCostable> PlayerEffectCards { get; }
+        IList<IManaCostable> AIEffectCards { get; }
         IDeck PlayerDeck { get; }
         IDeck AIDeck { get; }
         IList<ICard> PlayerGraveyard { get; }

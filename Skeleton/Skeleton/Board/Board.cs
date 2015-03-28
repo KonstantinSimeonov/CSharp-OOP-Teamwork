@@ -1,48 +1,66 @@
 ﻿namespace Skeleton.Board
 {
     using SampleInterfaces;
+    using System.Collections.Generic;
 
     public class Board : IBoard
     {
+        private IList<IMonsterCard> playersMonsters;
+        private IList<IMonsterCard> aiMonsters;
+        private IList<IManaCostable> playerEffectCards;
+        private IList<IManaCostable> aiEffectCards;
+        private IDeck playerDeck;
+        private IDeck aiDeck;
+        private IList<ICard> playerGraveyard;
+        private IList<ICard> aiGraveyard;
 
-        public System.Collections.Generic.IList<IMonsterCard> PlayersMonsters
+
+        public IList<IMonsterCard> PlayersMonsters
         {
-            get { throw new System.NotImplementedException(); }
+            get { return new List<IMonsterCard>(playersMonsters); }
+            private set { playersMonsters = value; }
         }
 
-        public System.Collections.Generic.IList<IMonsterCard> AIMonsters
+        public IList<IMonsterCard> AIMonsters
         {
-            get { throw new System.NotImplementedException(); }
+            get { return new List<IMonsterCard>(aiMonsters); }
+            private set { aiMonsters = value; }
         }
 
-        public System.Collections.Generic.IList<Cards.EffectCard> PlayerEffectCards
+        public IList<IManaCostable> PlayerEffectCards
         {
-            get { throw new System.NotImplementedException(); }
+            get { return new List<IManaCostable>(playerEffectCards); }
+            private set { playerEffectCards = value; }
         }
 
-        public System.Collections.Generic.IList<Cards.EffectCard> AIEffectCards
+        public IList<IManaCostable> AIEffectCards
         {
-            get { throw new System.NotImplementedException(); }
+            get { return new List<IManaCostable>(aiEffectCards); }
+            private set { aiEffectCards = value; }
         }
 
         public IDeck PlayerDeck
         {
-            get { throw new System.NotImplementedException(); }
+            get;
+            private set;
         }
 
         public IDeck AIDeck
         {
-            get { throw new System.NotImplementedException(); }
+            get;
+            private set;
         }
 
-        public System.Collections.Generic.IList<ICard> PlayerGraveyard
+        public IList<ICard> PlayerGraveyard
         {
-            get { throw new System.NotImplementedException(); }
+            get { return new List<ICard>(playerGraveyard); }
+            private set { playerGraveyard = value; }
         }
 
-        public System.Collections.Generic.IList<ICard> AIGraveyard
+        public IList<ICard> AIGraveyard
         {
-            get { throw new System.NotImplementedException(); }
+            get { return new List<ICard>(aiGraveyard); }
+            private set { aiGraveyard = value; }
         }
     }
 }

@@ -3,8 +3,10 @@
     using System;
     using SampleInterfaces;
 
-    public abstract class Card : ICard, IFaceDownCard
+    public abstract class Card : ICard, IFaceDownCard, IParsable
     {
+
+        public bool FaceUp { get; private set; }
 
         public string Name
         {
@@ -24,6 +26,26 @@
         }
 
         public void Flip()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static string Path
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        private static void Parse(string path)
+        {
+            throw new NotImplementedException();
+        }
+
+        string IParsable.Path
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        void IParsable.Parse(string path)
         {
             throw new NotImplementedException();
         }
