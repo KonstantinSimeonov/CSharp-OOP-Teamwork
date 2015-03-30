@@ -73,6 +73,7 @@
             this.BigCards = new System.Windows.Forms.ImageList(this.components);
             this.PDeck = new System.Windows.Forms.PictureBox();
             this.CompDeck = new System.Windows.Forms.PictureBox();
+            this.PlayerMonster2c = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.CompCard5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompCard8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompCard7)).BeginInit();
@@ -114,6 +115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PDeck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompDeck)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlayerMonster2c)).BeginInit();
             this.SuspendLayout();
             // 
             // CompCard5
@@ -166,64 +168,62 @@
             // 
             // PCard2
             // 
-            this.PCard2.Image = global::test.Properties.Resources.img;
-            this.PCard2.Location = new System.Drawing.Point(762, 597);
+            this.PCard2.Location = new System.Drawing.Point(765, 594);
             this.PCard2.Name = "PCard2";
-            this.PCard2.Size = new System.Drawing.Size(66, 84);
+            this.PCard2.Size = new System.Drawing.Size(73, 87);
             this.PCard2.TabIndex = 6;
             this.PCard2.TabStop = false;
             this.PCard2.Click += new System.EventHandler(this.pictureBox6_Click);
-            this.PCard2.MouseEnter += new System.EventHandler(this.pictureBox6_MouseEnter);
-            this.PCard2.MouseLeave += new System.EventHandler(this.pictureBox6_MouseLeave);
+            this.PCard2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PCard2_MouseDoubleClick);
             this.PCard2.MouseHover += new System.EventHandler(this.PCard2_MouseHover);
             // 
             // PCard8
             // 
-            this.PCard8.Image = ((System.Drawing.Image)(resources.GetObject("PCard8.Image")));
-            this.PCard8.Location = new System.Drawing.Point(343, 597);
+            this.PCard8.Location = new System.Drawing.Point(333, 597);
             this.PCard8.Name = "PCard8";
             this.PCard8.Size = new System.Drawing.Size(66, 84);
             this.PCard8.TabIndex = 7;
             this.PCard8.TabStop = false;
+            this.PCard8.DoubleClick += new System.EventHandler(this.PCard8_DoubleClick);
             this.PCard8.MouseHover += new System.EventHandler(this.PCard8_MouseHover);
             // 
             // PCard1
             // 
-            this.PCard1.Image = global::test.Properties.Resources._51aPSANM2YL;
-            this.PCard1.Location = new System.Drawing.Point(834, 597);
+            this.PCard1.Location = new System.Drawing.Point(844, 594);
             this.PCard1.Name = "PCard1";
             this.PCard1.Size = new System.Drawing.Size(66, 84);
             this.PCard1.TabIndex = 8;
             this.PCard1.TabStop = false;
             this.PCard1.Click += new System.EventHandler(this.PCard6_Click);
+            this.PCard1.DoubleClick += new System.EventHandler(this.PCard1_DoubleClick);
             this.PCard1.MouseHover += new System.EventHandler(this.PCard1_MouseHover);
             // 
             // PCard5
             // 
-            this.PCard5.Image = global::test.Properties.Resources.th__2_;
-            this.PCard5.Location = new System.Drawing.Point(559, 597);
+            this.PCard5.Location = new System.Drawing.Point(549, 597);
             this.PCard5.Name = "PCard5";
             this.PCard5.Size = new System.Drawing.Size(66, 84);
             this.PCard5.TabIndex = 9;
             this.PCard5.TabStop = false;
             this.PCard5.Click += new System.EventHandler(this.PCard5_Click);
+            this.PCard5.DoubleClick += new System.EventHandler(this.PCard5_DoubleClick);
             this.PCard5.MouseHover += new System.EventHandler(this.PCard5_MouseHover);
             // 
             // PCard6
             // 
-            this.PCard6.Image = global::test.Properties.Resources.th__1_;
-            this.PCard6.Location = new System.Drawing.Point(487, 597);
+            this.PCard6.Location = new System.Drawing.Point(477, 597);
             this.PCard6.Name = "PCard6";
             this.PCard6.Size = new System.Drawing.Size(66, 84);
             this.PCard6.TabIndex = 10;
             this.PCard6.TabStop = false;
             this.PCard6.Click += new System.EventHandler(this.pictureBox10_Click);
+            this.PCard6.DoubleClick += new System.EventHandler(this.PCard6_DoubleClick);
             this.PCard6.MouseHover += new System.EventHandler(this.PCard6_MouseHover);
             // 
             // ZoomMonsterCard
             // 
             this.ZoomMonsterCard.Image = global::test.Properties.Resources.monsters_109670_2;
-            this.ZoomMonsterCard.Location = new System.Drawing.Point(-4, 72);
+            this.ZoomMonsterCard.Location = new System.Drawing.Point(-5, 217);
             this.ZoomMonsterCard.MaximumSize = new System.Drawing.Size(250, 400);
             this.ZoomMonsterCard.Name = "ZoomMonsterCard";
             this.ZoomMonsterCard.Size = new System.Drawing.Size(250, 400);
@@ -236,14 +236,14 @@
             // 
             this.SmallCards.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("SmallCards.ImageStream")));
             this.SmallCards.TransparentColor = System.Drawing.Color.Transparent;
-            this.SmallCards.Images.SetKeyName(0, "51aPSANM2YL.jpg");
-            this.SmallCards.Images.SetKeyName(1, "img.jpg");
-            this.SmallCards.Images.SetKeyName(2, "monsters_109670_2.jpg");
-            this.SmallCards.Images.SetKeyName(3, "th (1).jpg");
-            this.SmallCards.Images.SetKeyName(4, "th (2).jpg");
-            this.SmallCards.Images.SetKeyName(5, "th.jpg");
-            this.SmallCards.Images.SetKeyName(6, "UmiirukaDB1-EN-C-UE.jpg");
-            this.SmallCards.Images.SetKeyName(7, "yu_gi_oh_season_0___red_hecate_by_jam4077-d62k1qt.jpg");
+            this.SmallCards.Images.SetKeyName(0, "0.jpg");
+            this.SmallCards.Images.SetKeyName(1, "1.jpg");
+            this.SmallCards.Images.SetKeyName(2, "2.jpg");
+            this.SmallCards.Images.SetKeyName(3, "3.jpg");
+            this.SmallCards.Images.SetKeyName(4, "4.jpg");
+            this.SmallCards.Images.SetKeyName(5, "5.jpg");
+            this.SmallCards.Images.SetKeyName(6, "6.jpg");
+            this.SmallCards.Images.SetKeyName(7, "7.jpg");
             // 
             // PlayerSpell1
             // 
@@ -255,7 +255,7 @@
             // 
             // PlayerSpell2
             // 
-            this.PlayerSpell2.Location = new System.Drawing.Point(683, 478);
+            this.PlayerSpell2.Location = new System.Drawing.Point(678, 478);
             this.PlayerSpell2.Name = "PlayerSpell2";
             this.PlayerSpell2.Size = new System.Drawing.Size(100, 105);
             this.PlayerSpell2.TabIndex = 13;
@@ -298,7 +298,7 @@
             // 
             // PlayerMonster5
             // 
-            this.PlayerMonster5.Location = new System.Drawing.Point(355, 367);
+            this.PlayerMonster5.Location = new System.Drawing.Point(353, 367);
             this.PlayerMonster5.Name = "PlayerMonster5";
             this.PlayerMonster5.Size = new System.Drawing.Size(98, 105);
             this.PlayerMonster5.TabIndex = 18;
@@ -329,6 +329,7 @@
             this.PlayerMonster1.Size = new System.Drawing.Size(100, 105);
             this.PlayerMonster1.TabIndex = 21;
             this.PlayerMonster1.TabStop = false;
+            this.PlayerMonster1.Click += new System.EventHandler(this.PlayerMonster1_Click);
             // 
             // PlayerSpell5
             // 
@@ -357,7 +358,7 @@
             // 
             // CompSpell5
             // 
-            this.CompSpell5.Location = new System.Drawing.Point(353, 108);
+            this.CompSpell5.Location = new System.Drawing.Point(355, 108);
             this.CompSpell5.Name = "CompSpell5";
             this.CompSpell5.Size = new System.Drawing.Size(100, 117);
             this.CompSpell5.TabIndex = 25;
@@ -373,7 +374,7 @@
             // 
             // CompSpell3
             // 
-            this.CompSpell3.Location = new System.Drawing.Point(573, 108);
+            this.CompSpell3.Location = new System.Drawing.Point(567, 108);
             this.CompSpell3.Name = "CompSpell3";
             this.CompSpell3.Size = new System.Drawing.Size(100, 117);
             this.CompSpell3.TabIndex = 27;
@@ -397,7 +398,7 @@
             // 
             // CompMonster5
             // 
-            this.CompMonster5.Location = new System.Drawing.Point(353, 231);
+            this.CompMonster5.Location = new System.Drawing.Point(355, 231);
             this.CompMonster5.Name = "CompMonster5";
             this.CompMonster5.Size = new System.Drawing.Size(100, 105);
             this.CompMonster5.TabIndex = 30;
@@ -413,35 +414,34 @@
             // 
             // PCard4
             // 
-            this.PCard4.Image = global::test.Properties.Resources.th;
-            this.PCard4.Location = new System.Drawing.Point(628, 597);
+            this.PCard4.Location = new System.Drawing.Point(621, 597);
             this.PCard4.Name = "PCard4";
             this.PCard4.Size = new System.Drawing.Size(66, 84);
             this.PCard4.TabIndex = 32;
             this.PCard4.TabStop = false;
             this.PCard4.Click += new System.EventHandler(this.PCard2_Click);
+            this.PCard4.DoubleClick += new System.EventHandler(this.PCard4_DoubleClick);
             this.PCard4.MouseHover += new System.EventHandler(this.PCard4_MouseHover);
             // 
             // PCard7
             // 
-            this.PCard7.Image = global::test.Properties.Resources.usethisOpen;
-            this.PCard7.Location = new System.Drawing.Point(415, 597);
+            this.PCard7.Location = new System.Drawing.Point(405, 597);
             this.PCard7.Name = "PCard7";
             this.PCard7.Size = new System.Drawing.Size(66, 84);
             this.PCard7.TabIndex = 33;
             this.PCard7.TabStop = false;
-            this.PCard7.Click += new System.EventHandler(this.PCard8_Click);
+            this.PCard7.DoubleClick += new System.EventHandler(this.PCard7_DoubleClick);
             this.PCard7.MouseHover += new System.EventHandler(this.PCard7_MouseHover);
             // 
             // PCard3
             // 
-            this.PCard3.Image = global::test.Properties.Resources.monsters_109670_21;
-            this.PCard3.Location = new System.Drawing.Point(700, 597);
+            this.PCard3.Location = new System.Drawing.Point(693, 597);
             this.PCard3.Name = "PCard3";
             this.PCard3.Size = new System.Drawing.Size(66, 84);
             this.PCard3.TabIndex = 34;
             this.PCard3.TabStop = false;
             this.PCard3.Click += new System.EventHandler(this.PCard1_Click);
+            this.PCard3.DoubleClick += new System.EventHandler(this.PCard3_DoubleClick);
             this.PCard3.MouseHover += new System.EventHandler(this.PCard3_MouseHover);
             // 
             // CompCard1
@@ -503,20 +503,30 @@
             // PDeck
             // 
             this.PDeck.Image = global::test.Properties.Resources.usethis1;
-            this.PDeck.Location = new System.Drawing.Point(920, 563);
+            this.PDeck.Location = new System.Drawing.Point(920, 556);
             this.PDeck.Name = "PDeck";
-            this.PDeck.Size = new System.Drawing.Size(66, 79);
+            this.PDeck.Size = new System.Drawing.Size(66, 86);
             this.PDeck.TabIndex = 40;
             this.PDeck.TabStop = false;
+            this.PDeck.Click += new System.EventHandler(this.PDeck_Click);
+            this.PDeck.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PDeck_MouseDoubleClick);
             // 
             // CompDeck
             // 
             this.CompDeck.Image = global::test.Properties.Resources.usethis1;
-            this.CompDeck.Location = new System.Drawing.Point(920, 53);
+            this.CompDeck.Location = new System.Drawing.Point(920, 46);
             this.CompDeck.Name = "CompDeck";
-            this.CompDeck.Size = new System.Drawing.Size(66, 79);
+            this.CompDeck.Size = new System.Drawing.Size(71, 86);
             this.CompDeck.TabIndex = 41;
             this.CompDeck.TabStop = false;
+            // 
+            // PlayerMonster2c
+            // 
+            this.PlayerMonster2c.Location = new System.Drawing.Point(678, 367);
+            this.PlayerMonster2c.Name = "PlayerMonster2c";
+            this.PlayerMonster2c.Size = new System.Drawing.Size(100, 105);
+            this.PlayerMonster2c.TabIndex = 42;
+            this.PlayerMonster2c.TabStop = false;
             // 
             // CardGame
             // 
@@ -524,6 +534,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1003, 683);
+            this.Controls.Add(this.PlayerMonster2c);
             this.Controls.Add(this.CompDeck);
             this.Controls.Add(this.PDeck);
             this.Controls.Add(this.pictureBox19);
@@ -612,6 +623,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PDeck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompDeck)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlayerMonster2c)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -661,6 +673,7 @@
         private System.Windows.Forms.ImageList BigCards;
         private System.Windows.Forms.PictureBox PDeck;
         private System.Windows.Forms.PictureBox CompDeck;
+        private System.Windows.Forms.PictureBox PlayerMonster2c;
     }
 }
 
