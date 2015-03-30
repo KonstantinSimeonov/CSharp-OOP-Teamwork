@@ -54,7 +54,7 @@ namespace test
         {
             if (a == 1)
             {
-                pictureBox11.Image = pictureBox6.Image;
+                ZoomMonsterCard.Image = PCard2.Image;
                 a = 0;
                 b = 1;
             }
@@ -69,13 +69,109 @@ namespace test
         {
             if (a==1)
             {
-                pictureBox11.Image = pictureBox6.Image;
-                pictureBox6.Image = null;
+                ZoomMonsterCard.Image = PCard2.Image;
+                PCard2.Image = null;
                 
             }
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CompMonster3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PlayerSpell3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PlayerMonster5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PlayerMonster5_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PCard1_MouseHover(object sender, EventArgs e)
+        {
+            ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/01.jpg");
+        }
+
+        private void PCard2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PCard2_MouseHover(object sender, EventArgs e)
+        {
+            ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/02.jpg");
+        }
+
+        private void PCard3_MouseHover(object sender, EventArgs e)
+        {
+            ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/03.jpg");
+        }
+
+        private void PCard4_MouseHover(object sender, EventArgs e)
+        {
+            ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/04.jpg");
+        }
+
+        private void PCard5_MouseHover(object sender, EventArgs e)
+        {
+            ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/05.jpg");
+        }
+
+        private void PCard6_MouseHover(object sender, EventArgs e)
+        {
+            ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/06.jpg");
+        }
+
+        private void PCard7_MouseHover(object sender, EventArgs e)
+        {
+            ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/07.jpg");
+        }
+
+        private void PCard8_MouseHover(object sender, EventArgs e)
+        {
+
+            ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/08.jpg");
+        }
+
+        private void PCard5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PCard1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PCard8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PCard6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CompMonster4_Click(object sender, EventArgs e)
         {
 
         }

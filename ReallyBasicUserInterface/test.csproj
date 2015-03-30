@@ -103,7 +103,14 @@
     <None Include="Resources\board.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\monsters_109670_21.jpg" />
+    <None Include="Resources\monsters_109670_2.jpg" />
+    <None Include="Resources\51aPSANM2YL.jpg" />
     <Content Include="Resources\Enlarged board.png" />
+    <None Include="Resources\th %282%29.jpg" />
+    <None Include="Resources\th %281%29.jpg" />
+    <None Include="Resources\img.jpg" />
+    <None Include="Resources\th.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
