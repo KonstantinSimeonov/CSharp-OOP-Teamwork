@@ -1,7 +1,7 @@
 ﻿namespace Skeleton.Cards
 {
     using System;
-    using SampleInterfaces;
+    using Skeleton.Interfaces;
 
     public static class Effects
     {

@@ -1,6 +1,6 @@
 ﻿namespace Skeleton.Menu
 {
-    using SampleInterfaces;
+    using Skeleton.Interfaces;
 
     public class Menu : IMenu // I feel like that class will not be necessary, considering the nature of the windows forms
     {

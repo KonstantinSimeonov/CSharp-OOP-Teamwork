@@ -1,4 +1,4 @@
-﻿namespace SampleInterfaces
+﻿namespace Skeleton.Interfaces
 {
     using System.Collections.Generic;
     using Skeleton.Cards;

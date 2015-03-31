@@ -3,7 +3,7 @@
     using System;
     using System.IO;
     using System.Collections.Generic;
-    using SampleInterfaces;
+    using Skeleton.Interfaces;
 
     public abstract class Card : ICard, IFaceDownCard, IParsableCard
     {

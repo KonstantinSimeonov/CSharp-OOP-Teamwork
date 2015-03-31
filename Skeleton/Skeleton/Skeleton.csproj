@@ -48,7 +48,10 @@
     <Compile Include="Cards\Effects.cs" />
     <Compile Include="Cards\EquipSpellCard.cs" />
     <Compile Include="Cards\FieldSpellCard.cs" />
+    <Compile Include="CustomEventArgs\GameOverArgs.cs" />
+    <Compile Include="CustomEventArgs\PlayCardArgs.cs" />
     <Compile Include="Engine\Engine.cs" />
+    <Compile Include="CustomEventArgs\TargetArgs.cs" />
     <Compile Include="Interfaces\Interfaces.cs" />
     <Compile Include="Cards\MonsterCard.cs" />
     <Compile Include="Main.cs" />

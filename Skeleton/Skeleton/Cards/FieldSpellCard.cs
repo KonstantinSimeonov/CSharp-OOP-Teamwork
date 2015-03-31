@@ -1,5 +1,8 @@
 ﻿namespace Skeleton.Cards
 {
+    using System.Collections.Generic;
+    using Skeleton.Interfaces;
+
     public class FieldSpellCard : SpellCard
     {
         public int Duration { get; private set; }
@@ -20,7 +23,7 @@
             throw new System.NotImplementedException();
         }
 
-        public override System.Collections.Generic.IList<SampleInterfaces.ICard> Parse(string path)
+        public override IList<ICard> Parse(string path)
         {
             throw new System.NotImplementedException();
         }

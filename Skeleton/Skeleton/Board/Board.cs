@@ -1,9 +1,9 @@
 ﻿namespace Skeleton.Board
 {
-    using SampleInterfaces;
+    using Skeleton.Interfaces;
     using System.Collections.Generic;
 
-    public class Board : IBoard
+    public sealed class Board : IBoard
     {
         private const int MAX_MONSTERS = 5;
         private const int MAX_EFFECT_CARDS = 5;
@@ -17,7 +17,16 @@
         private IList<ICard> playerGraveyard;
         private IList<ICard> aiGraveyard;
 
-        public Board()
+        // Singleton
+
+        private static readonly IBoard board = new Board(); // assign at compile time
+
+        public static IBoard GameField // this property returns the only instance of the class that is creatable
+        {
+            get { return board; }
+        }
+
+        private Board() // constructors is private because of singleton
         {
             PlayersMonsters = new List<IMonsterCard>(MAX_MONSTERS);
             PlayerEffectCards = new List<IManaCostable>(MAX_EFFECT_CARDS);

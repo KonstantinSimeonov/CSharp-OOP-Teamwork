@@ -1,6 +1,6 @@
 ﻿namespace Skeleton.Cards
 {
-    using SampleInterfaces;
+    using Skeleton.Interfaces;
     using System.Collections.Generic;
 
     public class Deck : IDeck

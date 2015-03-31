@@ -1,6 +1,6 @@
 ﻿namespace Skeleton.Cards
 {
-    using SampleInterfaces;
+    using Skeleton.Interfaces;
 
     public class EquipSpellCard : SpellCard, IEquipCard
     {

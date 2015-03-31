@@ -1,8 +1,11 @@
 ﻿namespace Skeleton.Player
 {
-    using SampleInterfaces;
+    using Skeleton.Interfaces;
 
     public class HumanPlayer : Player, IHumanPlayer
     {
+        public HumanPlayer(IDeck deck)
+            : base(deck)
+        { }
     }
 }

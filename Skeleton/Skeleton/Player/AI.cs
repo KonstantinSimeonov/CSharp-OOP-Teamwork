@@ -1,8 +1,13 @@
 ﻿namespace Skeleton.Player
 {
-    using SampleInterfaces;
+    using Skeleton.Interfaces;
 
     public class AI : Player, IArtificialIntelligence
     {
+        public AI(IDeck deck)
+            :base(deck)
+        {
+            
+        }
     }
 }
