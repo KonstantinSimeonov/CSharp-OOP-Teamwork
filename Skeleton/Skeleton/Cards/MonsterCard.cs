@@ -4,39 +4,33 @@
 
     public class MonsterCard : Card, IMonsterCard
     {
-        public int AttackPoints
+
+        public MonsterCard(string name, string description, string path, int attack, int defense)
+            :base(name, description, path)
         {
-            get { throw new System.NotImplementedException(); }
+            this.DefensePoint = defense;
+            this.AttackPoints = attack;
         }
 
-        public int DefensePoint
-        {
-            get { throw new System.NotImplementedException(); }
-        }
+        public int AttackPoints { get; protected set; }
 
-        public SampleType Type
-        {
-            get { throw new System.NotImplementedException(); }
-        }
+        public int DefensePoint { get; protected set; }
+
+        public SampleType Type { get; protected set; }
+
+        public bool Position { get; protected set; }
 
         public void Attack(IMonsterCard monster)
         {
-            throw new System.NotImplementedException();
+            if (this.AttackPoints > monster.AttackPoints)
+            {
+                // EVENT HERE
+            }
         }
 
         public void ChangePosition()
         {
-            throw new System.NotImplementedException();
-        }
-
-        public void SetDown()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Flip()
-        {
-            throw new System.NotImplementedException();
+            Position = !Position;
         }
 
         public void SetUp()
@@ -49,10 +43,19 @@
             throw new System.NotImplementedException();
         }
 
-
-        public bool Position
+        public void ChangeAttack(int byPoints)
         {
-            get { throw new System.NotImplementedException(); }
+            this.AttackPoints += byPoints;
+        }
+
+        public void ChangeDefense(int byPoints)
+        {
+            this.DefensePoint += byPoints;
+        }
+
+        public override System.Collections.Generic.IList<ICard> Parse(string path)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

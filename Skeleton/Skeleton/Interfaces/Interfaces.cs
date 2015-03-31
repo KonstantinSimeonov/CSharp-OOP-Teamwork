@@ -9,10 +9,10 @@
         Student
     } // sample monster types
 
-    public interface IParsable
+    public interface IParsableCard
     {
         string Path { get; }
-        void Parse(string path);
+        IList<ICard> Parse(string path);
     }
 
     public interface ICard
@@ -53,6 +53,8 @@
 
         void Attack(IMonsterCard monster);
         void ChangePosition();
+        void ChangeAttack(int byPoints);
+        void ChangeDefense(int byPoints);
     }
 
     public interface ISpecialCard // special cards will have an effect

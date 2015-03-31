@@ -45,6 +45,7 @@
     <Compile Include="Cards\Card.cs" />
     <Compile Include="Cards\Deck.cs" />
     <Compile Include="Cards\EffectCard.cs" />
+    <Compile Include="Cards\Effects.cs" />
     <Compile Include="Cards\EquipSpellCard.cs" />
     <Compile Include="Cards\FieldSpellCard.cs" />
     <Compile Include="Engine\Engine.cs" />

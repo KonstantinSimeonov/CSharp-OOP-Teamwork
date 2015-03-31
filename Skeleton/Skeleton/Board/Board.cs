@@ -5,6 +5,9 @@
 
     public class Board : IBoard
     {
+        private const int MAX_MONSTERS = 5;
+        private const int MAX_EFFECT_CARDS = 5;
+
         private IList<IMonsterCard> playersMonsters;
         private IList<IMonsterCard> aiMonsters;
         private IList<IManaCostable> playerEffectCards;
@@ -14,6 +17,17 @@
         private IList<ICard> playerGraveyard;
         private IList<ICard> aiGraveyard;
 
+        public Board()
+        {
+            PlayersMonsters = new List<IMonsterCard>(MAX_MONSTERS);
+            PlayerEffectCards = new List<IManaCostable>(MAX_EFFECT_CARDS);
+            PlayerGraveyard = new List<ICard>();
+
+            aiMonsters = new List<IMonsterCard>(MAX_MONSTERS);
+            aiEffectCards = new List<IManaCostable>(MAX_EFFECT_CARDS);
+            aiGraveyard = new List<ICard>();
+            
+        }
 
         public IList<IMonsterCard> PlayersMonsters
         {

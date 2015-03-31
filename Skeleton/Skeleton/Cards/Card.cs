@@ -1,53 +1,51 @@
 ﻿namespace Skeleton.Cards
 {
     using System;
+    using System.IO;
+    using System.Collections.Generic;
     using SampleInterfaces;
 
-    public abstract class Card : ICard, IFaceDownCard, IParsable
+    public abstract class Card : ICard, IFaceDownCard, IParsableCard
     {
+        private string imagePath;
 
-        public bool FaceUp { get; private set; }
-
-        public string Name
+        public Card(string name, string description, string path)
         {
-            get { throw new NotImplementedException(); }
+            this.Name = name;
+            this.Description = description;
+            this.Path = path;
         }
 
-        public string Description
-        {
-            get { throw new NotImplementedException(); }
-        }
+        public bool FaceUp { get; protected set; }
+
+        public string Name { get; private set; }
+
+        public string Description { get; private set; }
 
         public abstract void Play();
 
         public void SetDown()
         {
-            throw new NotImplementedException();
+            FaceUp = false;
         }
 
         public void Flip()
         {
-            throw new NotImplementedException();
+            FaceUp = true;
+            // implement effect
         }
 
-        private static string Path
+        public string Path
         {
-            get { throw new NotImplementedException(); }
+            get { return imagePath; }
+            private set { imagePath = value; }
         }
 
-        private static void Parse(string path)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract IList<ICard> Parse(string path);
 
-        string IParsable.Path
+        public override string ToString()
         {
-            get { throw new NotImplementedException(); }
-        }
-
-        void IParsable.Parse(string path)
-        {
-            throw new NotImplementedException();
+            return string.Format("{0}\n{1}\n{2}", this.Name, this.GetType(), this.Description);
         }
     }
 }
