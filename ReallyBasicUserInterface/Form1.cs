@@ -15,10 +15,17 @@ namespace test
     {
         int a;
         int b;
-        
+
+        private PictureBox[] pHandC;
+        private PictureBox[] pSpellC;
+        private PictureBox[] pFieldC;
         public CardGame()
         {
             InitializeComponent();
+            pHandC=new PictureBox[]{PCard1,PCard2,PCard3,PCard4,PCard5,PCard6,PCard7,PCard8};
+            pSpellC = new PictureBox[] { PlayerSpell1, PlayerSpell2, PlayerSpell3, PlayerSpell4, PlayerSpell5 };
+            pFieldC = new PictureBox[] { PlayerMonster1, PlayerMonster2, PlayerMonster3, PlayerMonster4, PlayerMonster5 };
+
         }
 
         public void Subscribe(Logic.Interfaces.IPublisher publisher)
@@ -117,7 +124,7 @@ namespace test
             if (PCard1.Image != null)
             {
                 int index = ReturnIndex(PCard1);
-                ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/"+index+".jpg");
+                ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/" + index + ".jpg");
             }
 
         }
@@ -303,18 +310,18 @@ namespace test
         {
             var args = new PlayCardArgs(null);
             Raise(sender, args);
-            if (args.PlayedCard != null)
-                MessageBox.Show("O da");
-            PCard1.ImageLocation = (args.PlayedCard as Logic.Cards.Card).Path;
+            PCard1.Image = SmallCards.Images[int.Parse((args.PlayedCard as Logic.Cards.Card).Path)];
+           
+            
         }
 
         private void DrawCard(object sender, EventArgs e)
         {
-            
-          Random rand = new Random();
-            int index = rand.Next(0,8);
-           PictureBox temp = new PictureBox();
-            temp.Image=SmallCards.Images[index];
+
+            Random rand = new Random();
+            int index = rand.Next(0, 8);
+            PictureBox temp = new PictureBox();
+            temp.Image = SmallCards.Images[index];
 
             if (PCard1.Image == null)
             {
@@ -368,7 +375,7 @@ namespace test
             }
             else if (current.Image.Tag.Equals("1"))
             {
-                 return 1;
+                return 1;
             }
             else if (current.Image.Tag.Equals("2"))
             {
@@ -390,7 +397,7 @@ namespace test
             {
                 return 6;
             }
-            else 
+            else
             {
                 return 7;
             }
@@ -404,14 +411,33 @@ namespace test
         {
             //DrawCard(sender, e);
             TestDraw(sender, e);
-            
+
         }
 
         private void PDeck_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         public event Logic.Delegates.EventRaiser Raise;
+
+     
+
+        private void PlayerSpell1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+     
+
+        private void PCard8_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PlayerSpell5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

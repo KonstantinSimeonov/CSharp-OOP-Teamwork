@@ -184,6 +184,7 @@
             this.PCard8.Size = new System.Drawing.Size(66, 84);
             this.PCard8.TabIndex = 7;
             this.PCard8.TabStop = false;
+            this.PCard8.Click += new System.EventHandler(this.PCard8_Click_1);
             this.PCard8.DoubleClick += new System.EventHandler(this.PCard8_DoubleClick);
             this.PCard8.MouseHover += new System.EventHandler(this.PCard8_MouseHover);
             // 
@@ -223,7 +224,7 @@
             // ZoomMonsterCard
             // 
             this.ZoomMonsterCard.Image = global::test.Properties.Resources.monsters_109670_2;
-            this.ZoomMonsterCard.Location = new System.Drawing.Point(-5, 217);
+            this.ZoomMonsterCard.Location = new System.Drawing.Point(-18, 212);
             this.ZoomMonsterCard.MaximumSize = new System.Drawing.Size(250, 400);
             this.ZoomMonsterCard.Name = "ZoomMonsterCard";
             this.ZoomMonsterCard.Size = new System.Drawing.Size(250, 400);
@@ -236,14 +237,22 @@
             // 
             this.SmallCards.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("SmallCards.ImageStream")));
             this.SmallCards.TransparentColor = System.Drawing.Color.Transparent;
-            this.SmallCards.Images.SetKeyName(0, "0.jpg");
-            this.SmallCards.Images.SetKeyName(1, "1.jpg");
-            this.SmallCards.Images.SetKeyName(2, "2.jpg");
-            this.SmallCards.Images.SetKeyName(3, "3.jpg");
-            this.SmallCards.Images.SetKeyName(4, "4.jpg");
-            this.SmallCards.Images.SetKeyName(5, "5.jpg");
-            this.SmallCards.Images.SetKeyName(6, "6.jpg");
-            this.SmallCards.Images.SetKeyName(7, "7.jpg");
+            this.SmallCards.Images.SetKeyName(0, "1.jpg");
+            this.SmallCards.Images.SetKeyName(1, "2.jpg");
+            this.SmallCards.Images.SetKeyName(2, "3.jpg");
+            this.SmallCards.Images.SetKeyName(3, "4.jpg");
+            this.SmallCards.Images.SetKeyName(4, "5.jpg");
+            this.SmallCards.Images.SetKeyName(5, "7.jpg");
+            this.SmallCards.Images.SetKeyName(6, "8.jpg");
+            this.SmallCards.Images.SetKeyName(7, "9.jpg");
+            this.SmallCards.Images.SetKeyName(8, "10.jpg");
+            this.SmallCards.Images.SetKeyName(9, "11.jpg");
+            this.SmallCards.Images.SetKeyName(10, "12.jpg");
+            this.SmallCards.Images.SetKeyName(11, "13.jpg");
+            this.SmallCards.Images.SetKeyName(12, "14.jpg");
+            this.SmallCards.Images.SetKeyName(13, "15.jpg");
+            this.SmallCards.Images.SetKeyName(14, "16.jpg");
+            this.SmallCards.Images.SetKeyName(15, "17.jpg");
             // 
             // PlayerSpell1
             // 
@@ -252,6 +261,7 @@
             this.PlayerSpell1.Size = new System.Drawing.Size(100, 105);
             this.PlayerSpell1.TabIndex = 12;
             this.PlayerSpell1.TabStop = false;
+            this.PlayerSpell1.Click += new System.EventHandler(this.PlayerSpell1_Click);
             // 
             // PlayerSpell2
             // 
@@ -338,6 +348,7 @@
             this.PlayerSpell5.Size = new System.Drawing.Size(100, 105);
             this.PlayerSpell5.TabIndex = 22;
             this.PlayerSpell5.TabStop = false;
+            this.PlayerSpell5.Click += new System.EventHandler(this.PlayerSpell5_Click);
             // 
             // PlayerSpell4
             // 
@@ -489,16 +500,9 @@
             // 
             // BigCards
             // 
-            this.BigCards.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("BigCards.ImageStream")));
+            this.BigCards.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.BigCards.ImageSize = new System.Drawing.Size(16, 16);
             this.BigCards.TransparentColor = System.Drawing.Color.Transparent;
-            this.BigCards.Images.SetKeyName(0, "51aPSANM2YL.jpg");
-            this.BigCards.Images.SetKeyName(1, "img.jpg");
-            this.BigCards.Images.SetKeyName(2, "monsters_109670_2.jpg");
-            this.BigCards.Images.SetKeyName(3, "th (1).jpg");
-            this.BigCards.Images.SetKeyName(4, "th (3).jpg");
-            this.BigCards.Images.SetKeyName(5, "th.jpg");
-            this.BigCards.Images.SetKeyName(6, "usethisOpen.jpg");
-            this.BigCards.Images.SetKeyName(7, "yu_gi_oh_season_0___red_hecate_by_jam4077-d62k1qt.jpg");
             // 
             // PDeck
             // 

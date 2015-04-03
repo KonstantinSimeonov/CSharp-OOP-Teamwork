@@ -1,1 +1,1 @@
-Monster,Gosho,Gosho_e_pich,C:\Users\Pc\Desktop\CSharp-OOP-Teamwork\ReallyBasicUserInterface\Resources\th (1).jpg,1000,2000
+Monster,Gosho,Gosho_e_pich,0,1000,2000
