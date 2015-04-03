@@ -1,6 +1,7 @@
 ﻿namespace Logic.Board
 {
     using Logic.Interfaces;
+    using Logic.Cards;
     using System.Collections.Generic;
 
     public sealed class Board : IBoard
@@ -35,6 +36,9 @@
             aiMonsters = new List<IMonsterCard>(MAX_MONSTERS);
             aiEffectCards = new List<IManaCostable>(MAX_EFFECT_CARDS);
             aiGraveyard = new List<ICard>();
+
+            PlayerDeck = new Deck();
+            AIDeck = new Deck();
             
         }
 

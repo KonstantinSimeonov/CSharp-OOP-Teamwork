@@ -5,9 +5,10 @@
     using Logic.Interfaces;
     using Logic.Cards;
     using Logic.CustomEventArgs;
+    using Logic.Delegates;
     
 
-    public abstract class Player : IPlayer
+    public abstract class Player : IPlayer, IPublisher
     {
         public delegate void EventHandler(object sender, EventArgs e);
         public event EventHandler RaisePlay = delegate { };
@@ -26,6 +27,11 @@
             this.Deck = deck;
         }
 
+        public void Subscribe(IPublisher publisher)
+        {
+            publisher.Raise += this.Draw;
+        }
+
         public int LifePoints { get; private set; }
 
         public int ManaPoints { get; private set; }
@@ -42,9 +48,17 @@
             private set { hand = value; }
         }
 
-        public void Draw()
+        public void Draw(object sender, EventArgs e)
         {
-            hand.Add(deck.NextCard());
+            var args = e as PlayCardArgs;
+            if (args == null)
+                throw new InvalidCastException("eba si makata");
+
+
+            var drawn = deck.NextCard();
+            args.PlayedCard = drawn;
+            hand.Add(drawn);
+            //Raise(this, new PlayCardArgs(drawn));
         }
 
         public void PlayCard(ICard card)
@@ -67,5 +81,7 @@
             }
         }
 
+
+        public event EventRaiser Raise;
     }
 }

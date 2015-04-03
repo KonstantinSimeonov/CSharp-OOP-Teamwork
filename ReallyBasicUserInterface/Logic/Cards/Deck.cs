@@ -19,7 +19,7 @@
 
         public IList<ICard> Cards
         {
-            get { return new List<ICard>(cards); }
+            get { return cards; }
             private set { cards = value; }
         }
 

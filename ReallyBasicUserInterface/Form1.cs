@@ -7,16 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logic.CustomEventArgs;
 
 namespace test
 {
-    public partial class CardGame : Form
+    public partial class CardGame : Form, Logic.Interfaces.IPublisher
     {
         int a;
         int b;
+        
         public CardGame()
         {
             InitializeComponent();
+        }
+
+        public void Subscribe(Logic.Interfaces.IPublisher publisher)
+        {
+            publisher.Raise += this.DrawCard;
         }
 
         private void CardGame_Load(object sender, EventArgs e)
@@ -292,8 +299,18 @@ namespace test
             }
         }
 
-        private void DrawCard()
+        private void TestDraw(object sender, EventArgs e)
         {
+            var args = new PlayCardArgs(null);
+            Raise(sender, args);
+            if (args.PlayedCard != null)
+                MessageBox.Show("O da");
+            PCard1.ImageLocation = (args.PlayedCard as Logic.Cards.Card).Path;
+        }
+
+        private void DrawCard(object sender, EventArgs e)
+        {
+            
           Random rand = new Random();
             int index = rand.Next(0,8);
            PictureBox temp = new PictureBox();
@@ -385,12 +402,16 @@ namespace test
         /// <param name="e"></param>
         private void PDeck_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            DrawCard();
+            //DrawCard(sender, e);
+            TestDraw(sender, e);
+            
         }
 
         private void PDeck_Click(object sender, EventArgs e)
         {
-
+           
         }
+
+        public event Logic.Delegates.EventRaiser Raise;
     }
 }

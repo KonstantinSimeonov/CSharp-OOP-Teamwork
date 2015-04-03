@@ -64,7 +64,9 @@
     <Compile Include="Logic\CustomEventArgs\GameOverArgs.cs" />
     <Compile Include="Logic\CustomEventArgs\PlayCardArgs.cs" />
     <Compile Include="Logic\CustomEventArgs\TargetArgs.cs" />
+    <Compile Include="Logic\Delegates\EventDelegates.cs" />
     <Compile Include="Logic\Engine\Engine.cs" />
+    <Compile Include="Logic\Factory\Factory.cs" />
     <Compile Include="Logic\Interfaces\Interfaces.cs" />
     <Compile Include="Logic\Menu\Menu.cs" />
     <Compile Include="Logic\Player\AI.cs" />
@@ -135,6 +137,7 @@
     <None Include="Resources\img.jpg" />
     <None Include="Resources\th.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

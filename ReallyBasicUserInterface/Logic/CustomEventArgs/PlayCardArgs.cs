@@ -5,7 +5,7 @@
 
     class PlayCardArgs : EventArgs
     {
-        public ICard PlayedCard { get; private set; }
+        public ICard PlayedCard { get; set; }
 
         public PlayCardArgs(ICard card)
         {

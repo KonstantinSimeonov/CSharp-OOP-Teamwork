@@ -1,6 +1,7 @@
 ﻿namespace Logic.Interfaces
 {
     using System.Collections.Generic;
+    using Logic.Delegates;
     using Logic.Cards;
 
     public enum SampleType 
@@ -85,7 +86,7 @@
         int ManaPoints { get; }
         IList<ICard> Hand { get; } // the player needs a list of card as hand
         IDeck Deck { get; }
-        void Draw(); // the player can draw cards
+        void Draw(object sender, System.EventArgs e); // the player can draw cards
         void PlayCard(ICard card); // the player can play cards
     }
 
@@ -102,9 +103,20 @@
         
     }
 
+    public interface IPublisher
+    {
+        event EventRaiser Raise;
+    }
+
     public interface IEngine // one of the last things to implement
     {
         void Run();
+    }
+
+    public interface IFactory
+    {
+        ICard CreateCard();
+        IPlayer CreatePlayer(bool isAI);
     }
 
     public interface IArtificialIntelligence
