@@ -66,18 +66,5 @@
                 }
             }
         }
-
-        public static void ChangeLife_Params(int byPoints, bool player)
-        {
-            if (player)
-            {
-
-            }
-            else
-            {
-
-            }
-        }
-
     }
 }
