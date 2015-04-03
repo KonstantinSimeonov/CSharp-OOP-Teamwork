@@ -116,7 +116,7 @@
     public interface IFactory
     {
         ICard CreateCard();
-        IPlayer CreatePlayer(bool isAI);
+        IPlayer CreatePlayer(IDeck deck, bool isAI);
     }
 
     public interface IArtificialIntelligence

@@ -4,6 +4,7 @@
     using System.IO;
     using Logic.Interfaces;
     using Logic.Cards;
+    using Logic.Player;
 
     public class Factory : IFactory
     {
@@ -18,9 +19,18 @@
         private const string path = @"..\..\CardInfo\CardInfo.txt";
         private static readonly StreamReader cardReader = new StreamReader(path);
 
-        public Factory()
+        private static readonly IFactory factory = new Factory();
+
+        private bool aiCreated, humanPlayerCreated;
+
+        public static IFactory Instance
         {
-        
+            get { return factory; }
+        }
+
+        private Factory()
+        {
+            aiCreated = humanPlayerCreated = false;
         }
 
         public ICard CreateCard()
@@ -39,9 +49,22 @@
             }
         }
 
-        public IPlayer CreatePlayer(bool isAI)
+        public IPlayer CreatePlayer(IDeck deck, bool isAI = false)
         {
-            throw new NotImplementedException();
+            if (isAI)
+            {
+                if (this.aiCreated == true)
+                    throw new InvalidOperationException("Cannot create two AI players!");
+
+                this.aiCreated = true;
+                return new HumanPlayer(deck);
+            }
+
+            if (this.humanPlayerCreated == true)
+                throw new NotImplementedException("No multiplayer yet!");
+
+            this.humanPlayerCreated = true;
+            return new HumanPlayer(deck);
         }
     }
 }

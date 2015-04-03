@@ -12,7 +12,8 @@ using Logic.CustomEventArgs;
 namespace test
 {
     public partial class CardGame : Form, Logic.Interfaces.IPublisher
-    {
+    {     
+
         int a;
         int b;
 
@@ -124,7 +125,8 @@ namespace test
             if (PCard1.Image != null)
             {
                 int index = ReturnIndex(PCard1);
-                ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/" + index + ".jpg");
+                //ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/" + index + ".jpg");
+                ZoomMonsterCard.ImageLocation = string.Format(@"../../Resources/DeckImgCurrent/BigCards/{0}.jpg", index);
             }
 
         }
@@ -309,9 +311,7 @@ namespace test
         private void TestDraw(object sender, EventArgs e)
         {
             var args = new PlayCardArgs(null);
-            Raise(sender, args);
-            PCard1.Image = SmallCards.Images[int.Parse((args.PlayedCard as Logic.Cards.Card).Path)];
-           
+            Raise(sender, args);           
             
         }
 
@@ -369,38 +369,7 @@ namespace test
 
         private int ReturnIndex(PictureBox current)
         {
-            if (current.Image.Tag.Equals("0"))
-            {
-                return 0;
-            }
-            else if (current.Image.Tag.Equals("1"))
-            {
-                return 1;
-            }
-            else if (current.Image.Tag.Equals("2"))
-            {
-                return 2;
-            }
-            else if (current.Image.Tag.Equals("3"))
-            {
-                return 3;
-            }
-            else if (current.Image.Tag.Equals("4"))
-            {
-                return 4;
-            }
-            else if (current.Image.Tag.Equals("5"))
-            {
-                return 5;
-            }
-            else if (current.Image.Tag.Equals("6"))
-            {
-                return 6;
-            }
-            else
-            {
-                return 7;
-            }
+            return int.Parse(current.Image.Tag.ToString());
         }
         /// <summary>
         /// methoods end !!!!!!!!!!!!!!!!!!!!

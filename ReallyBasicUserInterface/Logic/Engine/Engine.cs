@@ -39,7 +39,7 @@
             var player = new HumanPlayer(board.PlayerDeck);
             player.Subscribe(form);
             form.Subscribe(player);
-            var fack = new Factory();
+            var fack = Factory.Instance;
             player.Deck.Cards.Add(fack.CreateCard());
             Application.Run(form);
         }
