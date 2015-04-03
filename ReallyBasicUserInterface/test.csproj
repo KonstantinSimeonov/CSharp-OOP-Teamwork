@@ -50,6 +50,26 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\Board\Board.cs" />
+    <Compile Include="Logic\Cards\Card.cs" />
+    <Compile Include="Logic\Cards\Deck.cs" />
+    <Compile Include="Logic\Cards\EffectCard.cs" />
+    <Compile Include="Logic\Cards\Effects.cs" />
+    <Compile Include="Logic\Cards\EquipSpellCard.cs" />
+    <Compile Include="Logic\Cards\FieldSpellCard.cs" />
+    <Compile Include="Logic\Cards\MonsterCard.cs" />
+    <Compile Include="Logic\Cards\SpecialMonster.cs" />
+    <Compile Include="Logic\Cards\SpellCard.cs" />
+    <Compile Include="Logic\Cards\TrapCard.cs" />
+    <Compile Include="Logic\CustomEventArgs\GameOverArgs.cs" />
+    <Compile Include="Logic\CustomEventArgs\PlayCardArgs.cs" />
+    <Compile Include="Logic\CustomEventArgs\TargetArgs.cs" />
+    <Compile Include="Logic\Engine\Engine.cs" />
+    <Compile Include="Logic\Interfaces\Interfaces.cs" />
+    <Compile Include="Logic\Menu\Menu.cs" />
+    <Compile Include="Logic\Player\AI.cs" />
+    <Compile Include="Logic\Player\HumanPlayer.cs" />
+    <Compile Include="Logic\Player\Player.cs" />
     <Compile Include="MethodsForCards.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +86,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Logic\SkeletonDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,6 +128,7 @@
     <None Include="Resources\monsters_109670_21.jpg" />
     <None Include="Resources\monsters_109670_2.jpg" />
     <None Include="Resources\51aPSANM2YL.jpg" />
+    <Content Include="Logic\Cards\DeckInfo.txt" />
     <Content Include="Resources\Enlarged board.png" />
     <None Include="Resources\th %282%29.jpg" />
     <None Include="Resources\th %281%29.jpg" />
