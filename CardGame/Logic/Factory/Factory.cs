@@ -5,23 +5,29 @@
     using Logic.Interfaces;
     using Logic.Cards;
     using Logic.Player;
+    using System.Reflection;
+    using System.Runtime.Serialization.Formatters.Binary;
 
     public class Factory : IFactory
     {
         private const char SPLIT = ',';
+        private const char NEWLINE = '\n';
         private const string MONSTER_CARD = "Monster";
         private const string SPECIAL_MONSTER_CARD = "SpecialMonster";
+        private const string SPELL_CARD = "Spell";
         private const string EQUIP_CARD = "Equip";
         private const string TRAP_CARD = "Trap";
         private const string FIELD_CARD = "Field";
         private const string INVALID_ARG = "Wrong message from parsed txt";
 
         private const string path = @"..\..\CardInfo\CardInfo.txt";
-        private static readonly StreamReader cardReader = new StreamReader(path);
+
 
         private static readonly IFactory factory = new Factory();
 
         private bool aiCreated, humanPlayerCreated;
+        private int currentLine;
+        private string[] deckInfo;
 
         public static IFactory Instance
         {
@@ -31,22 +37,50 @@
         private Factory()
         {
             aiCreated = humanPlayerCreated = false;
+            var cardList = File.ReadAllText(path);
+            deckInfo = cardList.Split('\n');
+            this.currentLine = 0;
         }
+
+        //private void Serizalize()
+        //{
+        //    var stream = new FileStream(path);
+        //    var formatter = new BinaryFormatter();
+
+        //    var cardList = File.ReadAllText(path);
+        //    formatter.Serialize(stream, cardList);
+        //}
+        
 
         public ICard CreateCard()
         {
             // catch exception
-            string[] cardCommand = cardReader.ReadLine().Split(Factory.SPLIT);
+            string[] cardCommand = this.deckInfo[this.currentLine++].Split(Factory.SPLIT);
 
             switch (cardCommand[0])
             {
-                case Factory.MONSTER_CARD: 
+                case Factory.MONSTER_CARD:
                     return new MonsterCard(cardCommand[1], cardCommand[2], cardCommand[3], int.Parse(cardCommand[4]), int.Parse(cardCommand[5]));
+                case Factory.SPECIAL_MONSTER_CARD:
+                    return new SpecialMonster(cardCommand[1], cardCommand[2], cardCommand[3], int.Parse(cardCommand[4]), int.Parse(cardCommand[5]), Effects.NoEffect);
+                case Factory.SPELL_CARD:
+                    return new SpellCard(cardCommand[1], cardCommand[2], cardCommand[3], Effects.NoEffect, Effects.NoEffect);
                 case Factory.EQUIP_CARD:
-                    throw new NotImplementedException("Dotuk dobre");
+                    return new EquipSpellCard(cardCommand[1], cardCommand[2], cardCommand[3], Effects.NoEffect, Effects.NoEffect, 0, 0);
                 default:
                     throw new ArgumentException(Factory.INVALID_ARG);
             }
+        }
+
+        public IDeck AssembleDeck()
+        {
+            var deck = new Deck();
+            for (int i = 0; i < deckInfo.Length - 1; i++)
+            {
+                deck.Cards.Add(this.CreateCard());
+            }
+
+            return deck;
         }
 
         public IPlayer CreatePlayer(IDeck deck, bool isAI = false)

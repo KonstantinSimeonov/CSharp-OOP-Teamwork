@@ -14,7 +14,12 @@
 
         public static void NoEffect()
         {
-            Console.WriteLine("I'm useless");
+            
+        }
+
+        public static void NoEffect(int a, int b)
+        {
+        
         }
 
         private static ICard RequestCard()
@@ -25,7 +30,7 @@
 
         }
 
-        public static void Test(int a, int b)
+        public static void Game(int a, int b)
         {
             Console.WriteLine(a+b);
         }

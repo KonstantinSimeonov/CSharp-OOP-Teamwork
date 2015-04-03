@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Logic.CustomEventArgs;
-
-namespace test
+﻿namespace Game
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+    using Logic.CustomEventArgs;
+
     public partial class CardGame : Form, Logic.Interfaces.IPublisher
-    {     
+    {
 
         int a;
         int b;
@@ -20,18 +20,31 @@ namespace test
         private PictureBox[] pHandC;
         private PictureBox[] pSpellC;
         private PictureBox[] pFieldC;
+
         public CardGame()
         {
             InitializeComponent();
-            pHandC=new PictureBox[]{PCard1,PCard2,PCard3,PCard4,PCard5,PCard6,PCard7,PCard8};
+            pHandC = new PictureBox[] { PCard1, PCard2, PCard3, PCard4, PCard5, PCard6, PCard7, PCard8 };
             pSpellC = new PictureBox[] { PlayerSpell1, PlayerSpell2, PlayerSpell3, PlayerSpell4, PlayerSpell5 };
             pFieldC = new PictureBox[] { PlayerMonster1, PlayerMonster2, PlayerMonster3, PlayerMonster4, PlayerMonster5 };
-
         }
 
-        public void Subscribe(Logic.Interfaces.IPublisher publisher)
+
+
+        private PictureBox GetFirstEmpty(PictureBox[] boxes)
         {
-            publisher.Raise += this.DrawCard;
+            return boxes.Where(x => x.Image == null).First();
+        }
+
+        private void SetZoom(object sender, EventArgs e)
+        {
+            var box = sender as PictureBox;
+
+            if (box.Image == null)
+                return;
+
+            int index = int.Parse(box.Image.Tag.ToString());
+            this.ZoomMonsterCard.ImageLocation = string.Format(@"../../Resources/DeckImgCurrent/BigCards/{0}.jpg", index);
         }
 
         private void CardGame_Load(object sender, EventArgs e)
@@ -120,84 +133,11 @@ namespace test
 
         }
 
-        private void PCard1_MouseHover(object sender, EventArgs e)
-        {
-            if (PCard1.Image != null)
-            {
-                int index = ReturnIndex(PCard1);
-                //ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/" + index + ".jpg");
-                ZoomMonsterCard.ImageLocation = string.Format(@"../../Resources/DeckImgCurrent/BigCards/{0}.jpg", index);
-            }
-
-        }
+        
 
         private void PCard2_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void PCard2_MouseHover(object sender, EventArgs e)
-        {
-            if (PCard2.Image != null)
-            {
-                int index = ReturnIndex(PCard2);
-                ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/" + index + ".jpg");
-            }
-        }
-
-        private void PCard3_MouseHover(object sender, EventArgs e)
-        {
-            if (PCard3.Image != null)
-            {
-
-                int index = ReturnIndex(PCard3);
-                ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/" + index + ".jpg");
-            }
-        }
-
-        private void PCard4_MouseHover(object sender, EventArgs e)
-        {
-            if (PCard4.Image != null)
-            {
-                int index = ReturnIndex(PCard4);
-                ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/" + index + ".jpg");
-            }
-        }
-
-        private void PCard5_MouseHover(object sender, EventArgs e)
-        {
-            if (PCard5.Image != null)
-            {
-                int index = ReturnIndex(PCard5);
-                ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/" + index + ".jpg");
-            }
-        }
-
-        private void PCard6_MouseHover(object sender, EventArgs e)
-        {
-            if (PCard6.Image != null)
-            {
-                int index = ReturnIndex(PCard6);
-                ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/" + index + ".jpg");
-            }
-        }
-
-        private void PCard7_MouseHover(object sender, EventArgs e)
-        {
-            if (PCard7.Image != null)
-            {
-                int index = ReturnIndex(PCard7);
-                ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/" + index + ".jpg");
-            }
-        }
-
-        private void PCard8_MouseHover(object sender, EventArgs e)
-        {
-            if (PCard8.Image != null)
-            {
-                int index = ReturnIndex(PCard8);
-                ZoomMonsterCard.Image = Image.FromFile("C:/Users/Тито/Desktop/oop2/BigMonstCards/" + index + ".jpg");
-            }
         }
 
         private void PCard5_Click(object sender, EventArgs e)
@@ -308,11 +248,14 @@ namespace test
             }
         }
 
-        private void TestDraw(object sender, EventArgs e)
+        private void GameDraw(object sender, EventArgs e)
         {
             var args = new PlayCardArgs(null);
-            Raise(sender, args);           
-            
+            Raise(sender, args);
+            string path = (args.PlayedCard as Logic.Cards.Card).Path;
+            var nextBox = this.GetFirstEmpty(this.pHandC);
+            nextBox.Image = SmallCards.Images[int.Parse(path)];
+            nextBox.Image.Tag = path;
         }
 
         private void DrawCard(object sender, EventArgs e)
@@ -379,7 +322,7 @@ namespace test
         private void PDeck_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             //DrawCard(sender, e);
-            TestDraw(sender, e);
+            GameDraw(sender, e);
 
         }
 
@@ -390,14 +333,14 @@ namespace test
 
         public event Logic.Delegates.EventRaiser Raise;
 
-     
+
 
         private void PlayerSpell1_Click(object sender, EventArgs e)
         {
 
         }
 
-     
+
 
         private void PCard8_Click_1(object sender, EventArgs e)
         {
@@ -408,5 +351,6 @@ namespace test
         {
 
         }
+
     }
 }

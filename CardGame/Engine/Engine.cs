@@ -1,14 +1,11 @@
-﻿namespace Logic.Engine
+﻿namespace Engine
 {
-    
-    using test;
+    using Game;
     using Logic.Interfaces;
     using Logic.Board;
     using Logic.Factory;
     using Logic.Player;
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
     using System.Windows.Forms;
 
@@ -29,17 +26,14 @@
         [STAThread]
         public void Run()
         {
-            
-            
-            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var form = new CardGame();
-            IBoard board = Board.GameField;
-            var player = new HumanPlayer(board.PlayerDeck);
-            player.Subscribe(form);
-            form.Subscribe(player);
             var fack = Factory.Instance;
+            var form = new CardGame();
+            var GameDeck = fack.AssembleDeck();
+            IBoard board = Board.GameField;
+            var player = new HumanPlayer(GameDeck);
+            player.Subscribe(form);
             player.Deck.Cards.Add(fack.CreateCard());
             Application.Run(form);
         }

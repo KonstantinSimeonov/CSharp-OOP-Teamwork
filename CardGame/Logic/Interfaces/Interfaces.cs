@@ -108,6 +108,11 @@
         event EventRaiser Raise;
     }
 
+    public interface ISubscriber
+    {
+        void Subscribe(IPublisher publisher);
+    }
+
     public interface IEngine // one of the last things to implement
     {
         void Run();
@@ -117,6 +122,7 @@
     {
         ICard CreateCard();
         IPlayer CreatePlayer(IDeck deck, bool isAI);
+        IDeck AssembleDeck();
     }
 
     public interface IArtificialIntelligence

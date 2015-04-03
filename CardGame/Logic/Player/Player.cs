@@ -8,11 +8,8 @@
     using Logic.Delegates;
     
 
-    public abstract class Player : IPlayer, IPublisher
+    public abstract class Player : IPlayer, ISubscriber
     {
-        public delegate void EventHandler(object sender, EventArgs e);
-        public event EventHandler RaisePlay = delegate { };
-
         private const int LIFE_POINTS = 4000;
         private const int MANA_POINTS = 100;
 
@@ -68,7 +65,6 @@
             if(asEffectCard == null)
             {
                 this.Hand.Remove(card);
-                this.RaisePlay(this, new PlayCardArgs(card));
 
                 return;
             }
@@ -77,11 +73,7 @@
             {
                 this.ManaPoints -= asEffectCard.ManaCost;
                 this.Hand.Remove(card);
-                this.RaisePlay(this, new PlayCardArgs(card));
             }
         }
-
-
-        public event EventRaiser Raise;
     }
 }

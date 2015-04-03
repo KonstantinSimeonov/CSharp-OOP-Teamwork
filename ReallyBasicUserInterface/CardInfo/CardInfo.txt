@@ -1,1 +1,0 @@
-Monster,Gosho,Gosho_e_pich,0,1000,2000

@@ -1,4 +1,4 @@
-﻿namespace test
+﻿namespace Game
 {
     partial class CardGame
     {
@@ -120,7 +120,7 @@
             // 
             // CompCard5
             // 
-            this.CompCard5.Image = global::test.Properties.Resources.usethis1;
+            this.CompCard5.Image = global::Game.Properties.Resources.usethis1;
             this.CompCard5.Location = new System.Drawing.Point(556, 12);
             this.CompCard5.Name = "CompCard5";
             this.CompCard5.Size = new System.Drawing.Size(66, 79);
@@ -129,7 +129,7 @@
             // 
             // CompCard8
             // 
-            this.CompCard8.Image = global::test.Properties.Resources.usethis1;
+            this.CompCard8.Image = global::Game.Properties.Resources.usethis1;
             this.CompCard8.Location = new System.Drawing.Point(343, 12);
             this.CompCard8.Name = "CompCard8";
             this.CompCard8.Size = new System.Drawing.Size(66, 79);
@@ -139,7 +139,7 @@
             // 
             // CompCard7
             // 
-            this.CompCard7.Image = global::test.Properties.Resources.usethis1;
+            this.CompCard7.Image = global::Game.Properties.Resources.usethis1;
             this.CompCard7.Location = new System.Drawing.Point(415, 12);
             this.CompCard7.Name = "CompCard7";
             this.CompCard7.Size = new System.Drawing.Size(66, 79);
@@ -148,7 +148,7 @@
             // 
             // CompCard6
             // 
-            this.CompCard6.Image = global::test.Properties.Resources.usethis1;
+            this.CompCard6.Image = global::Game.Properties.Resources.usethis1;
             this.CompCard6.Location = new System.Drawing.Point(484, 12);
             this.CompCard6.Name = "CompCard6";
             this.CompCard6.Size = new System.Drawing.Size(66, 79);
@@ -159,7 +159,7 @@
             // 
             // CompCard4
             // 
-            this.CompCard4.Image = global::test.Properties.Resources.usethis1;
+            this.CompCard4.Image = global::Game.Properties.Resources.usethis1;
             this.CompCard4.Location = new System.Drawing.Point(628, 12);
             this.CompCard4.Name = "CompCard4";
             this.CompCard4.Size = new System.Drawing.Size(66, 79);
@@ -175,7 +175,7 @@
             this.PCard2.TabStop = false;
             this.PCard2.Click += new System.EventHandler(this.pictureBox6_Click);
             this.PCard2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PCard2_MouseDoubleClick);
-            this.PCard2.MouseHover += new System.EventHandler(this.PCard2_MouseHover);
+            this.PCard2.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard8
             // 
@@ -186,7 +186,7 @@
             this.PCard8.TabStop = false;
             this.PCard8.Click += new System.EventHandler(this.PCard8_Click_1);
             this.PCard8.DoubleClick += new System.EventHandler(this.PCard8_DoubleClick);
-            this.PCard8.MouseHover += new System.EventHandler(this.PCard8_MouseHover);
+            this.PCard8.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard1
             // 
@@ -197,7 +197,7 @@
             this.PCard1.TabStop = false;
             this.PCard1.Click += new System.EventHandler(this.PCard6_Click);
             this.PCard1.DoubleClick += new System.EventHandler(this.PCard1_DoubleClick);
-            this.PCard1.MouseHover += new System.EventHandler(this.PCard1_MouseHover);
+            this.PCard1.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard5
             // 
@@ -208,7 +208,7 @@
             this.PCard5.TabStop = false;
             this.PCard5.Click += new System.EventHandler(this.PCard5_Click);
             this.PCard5.DoubleClick += new System.EventHandler(this.PCard5_DoubleClick);
-            this.PCard5.MouseHover += new System.EventHandler(this.PCard5_MouseHover);
+            this.PCard5.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard6
             // 
@@ -219,11 +219,11 @@
             this.PCard6.TabStop = false;
             this.PCard6.Click += new System.EventHandler(this.pictureBox10_Click);
             this.PCard6.DoubleClick += new System.EventHandler(this.PCard6_DoubleClick);
-            this.PCard6.MouseHover += new System.EventHandler(this.PCard6_MouseHover);
+            this.PCard6.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // ZoomMonsterCard
             // 
-            this.ZoomMonsterCard.Image = global::test.Properties.Resources.monsters_109670_2;
+            this.ZoomMonsterCard.Image = global::Game.Properties.Resources.monsters_109670_2;
             this.ZoomMonsterCard.Location = new System.Drawing.Point(-18, 212);
             this.ZoomMonsterCard.MaximumSize = new System.Drawing.Size(250, 400);
             this.ZoomMonsterCard.Name = "ZoomMonsterCard";
@@ -237,22 +237,23 @@
             // 
             this.SmallCards.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("SmallCards.ImageStream")));
             this.SmallCards.TransparentColor = System.Drawing.Color.Transparent;
-            this.SmallCards.Images.SetKeyName(0, "1.jpg");
-            this.SmallCards.Images.SetKeyName(1, "2.jpg");
-            this.SmallCards.Images.SetKeyName(2, "3.jpg");
-            this.SmallCards.Images.SetKeyName(3, "4.jpg");
-            this.SmallCards.Images.SetKeyName(4, "5.jpg");
-            this.SmallCards.Images.SetKeyName(5, "7.jpg");
-            this.SmallCards.Images.SetKeyName(6, "8.jpg");
-            this.SmallCards.Images.SetKeyName(7, "9.jpg");
-            this.SmallCards.Images.SetKeyName(8, "10.jpg");
-            this.SmallCards.Images.SetKeyName(9, "11.jpg");
-            this.SmallCards.Images.SetKeyName(10, "12.jpg");
-            this.SmallCards.Images.SetKeyName(11, "13.jpg");
-            this.SmallCards.Images.SetKeyName(12, "14.jpg");
-            this.SmallCards.Images.SetKeyName(13, "15.jpg");
-            this.SmallCards.Images.SetKeyName(14, "16.jpg");
-            this.SmallCards.Images.SetKeyName(15, "17.jpg");
+            this.SmallCards.Images.SetKeyName(0, "0.jpg");
+            this.SmallCards.Images.SetKeyName(1, "1.jpg");
+            this.SmallCards.Images.SetKeyName(2, "2.jpg");
+            this.SmallCards.Images.SetKeyName(3, "3.jpg");
+            this.SmallCards.Images.SetKeyName(4, "4.jpg");
+            this.SmallCards.Images.SetKeyName(5, "5.jpg");
+            this.SmallCards.Images.SetKeyName(6, "7.jpg");
+            this.SmallCards.Images.SetKeyName(7, "8.jpg");
+            this.SmallCards.Images.SetKeyName(8, "9.jpg");
+            this.SmallCards.Images.SetKeyName(9, "10.jpg");
+            this.SmallCards.Images.SetKeyName(10, "11.jpg");
+            this.SmallCards.Images.SetKeyName(11, "12.jpg");
+            this.SmallCards.Images.SetKeyName(12, "13.jpg");
+            this.SmallCards.Images.SetKeyName(13, "14.jpg");
+            this.SmallCards.Images.SetKeyName(14, "15.jpg");
+            this.SmallCards.Images.SetKeyName(15, "16.jpg");
+            this.SmallCards.Images.SetKeyName(16, "17.jpg");
             // 
             // PlayerSpell1
             // 
@@ -262,6 +263,7 @@
             this.PlayerSpell1.TabIndex = 12;
             this.PlayerSpell1.TabStop = false;
             this.PlayerSpell1.Click += new System.EventHandler(this.PlayerSpell1_Click);
+            this.PlayerSpell1.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PlayerSpell2
             // 
@@ -271,6 +273,7 @@
             this.PlayerSpell2.TabIndex = 13;
             this.PlayerSpell2.TabStop = false;
             this.PlayerSpell2.Click += new System.EventHandler(this.pictureBox13_Click);
+            this.PlayerSpell2.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PlayerSpell3
             // 
@@ -280,6 +283,7 @@
             this.PlayerSpell3.TabIndex = 14;
             this.PlayerSpell3.TabStop = false;
             this.PlayerSpell3.Click += new System.EventHandler(this.PlayerSpell3_Click);
+            this.PlayerSpell3.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // CompMonster3
             // 
@@ -314,7 +318,7 @@
             this.PlayerMonster5.TabIndex = 18;
             this.PlayerMonster5.TabStop = false;
             this.PlayerMonster5.Click += new System.EventHandler(this.PlayerMonster5_Click);
-            this.PlayerMonster5.MouseHover += new System.EventHandler(this.PlayerMonster5_MouseHover);
+            this.PlayerMonster5.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PlayerMonster3
             // 
@@ -323,6 +327,7 @@
             this.PlayerMonster3.Size = new System.Drawing.Size(100, 105);
             this.PlayerMonster3.TabIndex = 19;
             this.PlayerMonster3.TabStop = false;
+            this.PlayerMonster3.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PlayerMonster2
             // 
@@ -340,6 +345,7 @@
             this.PlayerMonster1.TabIndex = 21;
             this.PlayerMonster1.TabStop = false;
             this.PlayerMonster1.Click += new System.EventHandler(this.PlayerMonster1_Click);
+            this.PlayerMonster1.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PlayerSpell5
             // 
@@ -349,6 +355,7 @@
             this.PlayerSpell5.TabIndex = 22;
             this.PlayerSpell5.TabStop = false;
             this.PlayerSpell5.Click += new System.EventHandler(this.PlayerSpell5_Click);
+            this.PlayerSpell5.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PlayerSpell4
             // 
@@ -357,6 +364,7 @@
             this.PlayerSpell4.Size = new System.Drawing.Size(100, 105);
             this.PlayerSpell4.TabIndex = 23;
             this.PlayerSpell4.TabStop = false;
+            this.PlayerSpell4.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // CompMonster4
             // 
@@ -422,6 +430,7 @@
             this.PlayerMonster4.Size = new System.Drawing.Size(100, 105);
             this.PlayerMonster4.TabIndex = 31;
             this.PlayerMonster4.TabStop = false;
+            this.PlayerMonster4.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard4
             // 
@@ -432,7 +441,7 @@
             this.PCard4.TabStop = false;
             this.PCard4.Click += new System.EventHandler(this.PCard2_Click);
             this.PCard4.DoubleClick += new System.EventHandler(this.PCard4_DoubleClick);
-            this.PCard4.MouseHover += new System.EventHandler(this.PCard4_MouseHover);
+            this.PCard4.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard7
             // 
@@ -442,7 +451,7 @@
             this.PCard7.TabIndex = 33;
             this.PCard7.TabStop = false;
             this.PCard7.DoubleClick += new System.EventHandler(this.PCard7_DoubleClick);
-            this.PCard7.MouseHover += new System.EventHandler(this.PCard7_MouseHover);
+            this.PCard7.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard3
             // 
@@ -453,11 +462,11 @@
             this.PCard3.TabStop = false;
             this.PCard3.Click += new System.EventHandler(this.PCard1_Click);
             this.PCard3.DoubleClick += new System.EventHandler(this.PCard3_DoubleClick);
-            this.PCard3.MouseHover += new System.EventHandler(this.PCard3_MouseHover);
+            this.PCard3.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // CompCard1
             // 
-            this.CompCard1.Image = global::test.Properties.Resources.usethis1;
+            this.CompCard1.Image = global::Game.Properties.Resources.usethis1;
             this.CompCard1.Location = new System.Drawing.Point(844, 12);
             this.CompCard1.Name = "CompCard1";
             this.CompCard1.Size = new System.Drawing.Size(66, 79);
@@ -466,7 +475,7 @@
             // 
             // CompCard2
             // 
-            this.CompCard2.Image = global::test.Properties.Resources.usethis1;
+            this.CompCard2.Image = global::Game.Properties.Resources.usethis1;
             this.CompCard2.Location = new System.Drawing.Point(772, 12);
             this.CompCard2.Name = "CompCard2";
             this.CompCard2.Size = new System.Drawing.Size(66, 79);
@@ -475,7 +484,7 @@
             // 
             // CompCard3
             // 
-            this.CompCard3.Image = global::test.Properties.Resources.usethis1;
+            this.CompCard3.Image = global::Game.Properties.Resources.usethis1;
             this.CompCard3.Location = new System.Drawing.Point(700, 12);
             this.CompCard3.Name = "CompCard3";
             this.CompCard3.Size = new System.Drawing.Size(66, 79);
@@ -506,7 +515,7 @@
             // 
             // PDeck
             // 
-            this.PDeck.Image = global::test.Properties.Resources.usethis1;
+            this.PDeck.Image = global::Game.Properties.Resources.usethis1;
             this.PDeck.Location = new System.Drawing.Point(920, 556);
             this.PDeck.Name = "PDeck";
             this.PDeck.Size = new System.Drawing.Size(66, 86);
@@ -517,7 +526,7 @@
             // 
             // CompDeck
             // 
-            this.CompDeck.Image = global::test.Properties.Resources.usethis1;
+            this.CompDeck.Image = global::Game.Properties.Resources.usethis1;
             this.CompDeck.Location = new System.Drawing.Point(920, 46);
             this.CompDeck.Name = "CompDeck";
             this.CompDeck.Size = new System.Drawing.Size(71, 86);
@@ -531,6 +540,7 @@
             this.PlayerMonster2c.Size = new System.Drawing.Size(100, 105);
             this.PlayerMonster2c.TabIndex = 42;
             this.PlayerMonster2c.TabStop = false;
+            this.PlayerMonster2c.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // CardGame
             // 
