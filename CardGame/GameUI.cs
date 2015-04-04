@@ -210,10 +210,7 @@
             if(this.playerEnable)
             Movecards(PCard8);
         }
-        /// <summary>
-        /// methodsssssssssssssssssssssssssssssssss
-        /// </summary>
-        /// <param name="current"></param>
+        
         private void Movecards(PictureBox current)
         {
             if (current.Image != null)
@@ -222,37 +219,6 @@
                 box.Image = current.Image;
                 current.Image = null;
             }
-            
-            
-
-            //if (PlayerMonster1.Image == null)
-            //{
-            //    PlayerMonster1.Image = current.Image;
-            //    current.Image = null;
-            //}
-            //else if (PlayerMonster2c.Image == null)
-            //{
-            //    PlayerMonster2c.Image = current.Image;
-            //    current.Image = null;
-            //}
-            //else if (PlayerMonster3.Image == null)
-            //{
-            //    PlayerMonster3.Image = current.Image;
-            //    current.Image = null;
-
-            //}
-            //else if (PlayerMonster4.Image == null)
-            //{
-            //    PlayerMonster4.Image = current.Image;
-            //    current.Image = null;
-
-            //}
-            //else if (PlayerMonster5.Image == null)
-            //{
-            //    PlayerMonster5.Image = current.Image;
-            //    current.Image = null;
-
-            //}
         }
 
         private void GameDraw(object sender, EventArgs e)
@@ -265,67 +231,6 @@
             nextBox.Image.Tag = path;
         }
 
-        private void DrawCard(object sender, EventArgs e)
-        {
-
-            Random rand = new Random();
-            int index = rand.Next(0, 8);
-            PictureBox temp = new PictureBox();
-            temp.Image = SmallCards.Images[index];
-
-            if (PCard1.Image == null)
-            {
-                PCard1.Image = temp.Image;
-                PCard1.Image.Tag = index.ToString();
-            }
-            else if (PCard2.Image == null)
-            {
-                PCard2.Image = temp.Image;
-                PCard2.Image.Tag = index.ToString();
-            }
-            else if (PCard3.Image == null)
-            {
-                PCard3.Image = temp.Image;
-                PCard3.Image.Tag = index.ToString();
-            }
-            else if (PCard4.Image == null)
-            {
-                PCard4.Image = temp.Image;
-                PCard4.Image.Tag = index.ToString();
-            }
-            else if (PCard5.Image == null)
-            {
-                PCard5.Image = temp.Image;
-                PCard5.Image.Tag = index.ToString();
-            }
-            else if (PCard6.Image == null)
-            {
-                PCard6.Image = temp.Image;
-                PCard6.Image.Tag = index.ToString();
-            }
-            else if (PCard7.Image == null)
-            {
-                PCard7.Image = temp.Image;
-                PCard7.Image.Tag = index.ToString();
-            }
-            else if (PCard8.Image == null)
-            {
-                PCard8.Image = temp.Image;
-                PCard8.Image.Tag = index.ToString();
-            }
-
-
-        }
-
-        private int ReturnIndex(PictureBox current)
-        {
-            return int.Parse(current.Image.Tag.ToString());
-        }
-        /// <summary>
-        /// methoods end !!!!!!!!!!!!!!!!!!!!
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void PDeck_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             //DrawCard(sender, e);

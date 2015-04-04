@@ -17,6 +17,9 @@
 
         private static readonly Engine gameEngine = new Engine();
 
+        /// <summary>
+        /// Returns the only instance of the engine class.
+        /// </summary>
         public static Engine Instance
         {
             get { return gameEngine; }
