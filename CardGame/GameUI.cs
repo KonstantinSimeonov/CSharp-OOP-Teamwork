@@ -18,13 +18,15 @@
         private PictureBox[] pHandC;
         private PictureBox[] pSpellC;
         private PictureBox[] pFieldC;
+        private bool playerEnable;
 
         public CardGame()
         {
             InitializeComponent();
             pHandC = new PictureBox[] { PCard1, PCard2, PCard3, PCard4, PCard5, PCard6, PCard7, PCard8 };
             pSpellC = new PictureBox[] { PlayerSpell1, PlayerSpell2, PlayerSpell3, PlayerSpell4, PlayerSpell5 };
-            pFieldC = new PictureBox[] { PlayerMonster1, PlayerMonster2, PlayerMonster3, PlayerMonster4, PlayerMonster5 };
+            pFieldC = new PictureBox[] { PlayerMonster1, PlayerMonster2c, PlayerMonster3, PlayerMonster4, PlayerMonster5 };
+            this.playerEnable = true;
         }
 
 
@@ -155,6 +157,7 @@
 
         private void PCard1_DoubleClick(object sender, EventArgs e)
         {
+            if(this.playerEnable)
             Movecards(PCard1);
 
         }
@@ -166,6 +169,7 @@
 
         private void PCard2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            if (this.playerEnable)
             Movecards(PCard2);
         }
 
@@ -173,31 +177,37 @@
 
         private void PCard3_DoubleClick(object sender, EventArgs e)
         {
+            if (this.playerEnable)
             Movecards(PCard3);
         }
 
         private void PCard4_DoubleClick(object sender, EventArgs e)
         {
+            if (this.playerEnable)
             Movecards(PCard4);
         }
 
         private void PCard5_DoubleClick(object sender, EventArgs e)
         {
+            if (this.playerEnable)
             Movecards(PCard5);
         }
 
         private void PCard6_DoubleClick(object sender, EventArgs e)
         {
+            if (this.playerEnable)
             Movecards(PCard6);
         }
 
         private void PCard7_DoubleClick(object sender, EventArgs e)
         {
+            if (this.playerEnable)
             Movecards(PCard7);
         }
 
         private void PCard8_DoubleClick(object sender, EventArgs e)
         {
+            if(this.playerEnable)
             Movecards(PCard8);
         }
         /// <summary>
@@ -319,13 +329,13 @@
         private void PDeck_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             //DrawCard(sender, e);
-            GameDraw(sender, e);
+            //GameDraw(sender, e);
 
         }
 
         private void PDeck_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         public event Logic.Delegates.EventRaiser Raise;
@@ -347,6 +357,22 @@
         private void PlayerSpell5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.playerEnable)
+                this.GameDraw(sender, e);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.playerEnable = false;
         }
 
     }

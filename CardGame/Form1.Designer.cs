@@ -74,6 +74,11 @@
             this.PDeck = new System.Windows.Forms.PictureBox();
             this.CompDeck = new System.Windows.Forms.PictureBox();
             this.PlayerMonster2c = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CompCard5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompCard8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompCard7)).BeginInit();
@@ -542,12 +547,65 @@
             this.PlayerMonster2c.TabStop = false;
             this.PlayerMonster2c.MouseHover += new System.EventHandler(this.SetZoom);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(8, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 43;
+            this.button1.Text = "Draw";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(8, 59);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 44;
+            this.button2.Text = "Task 1";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(8, 97);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 45;
+            this.button3.Text = "Battle";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(8, 137);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 46;
+            this.button4.Text = "Task 2";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(8, 183);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 47;
+            this.button5.Text = "End";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // CardGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Game.Properties.Resources.GAMEBOARD;
             this.ClientSize = new System.Drawing.Size(1003, 683);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.PlayerMonster2c);
             this.Controls.Add(this.CompDeck);
             this.Controls.Add(this.PDeck);
@@ -688,6 +746,11 @@
         private System.Windows.Forms.PictureBox PDeck;
         private System.Windows.Forms.PictureBox CompDeck;
         private System.Windows.Forms.PictureBox PlayerMonster2c;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 
