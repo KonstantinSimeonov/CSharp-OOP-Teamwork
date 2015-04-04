@@ -540,6 +540,7 @@
             this.PlayerMonster2c.Size = new System.Drawing.Size(100, 105);
             this.PlayerMonster2c.TabIndex = 42;
             this.PlayerMonster2c.TabStop = false;
+            this.PlayerMonster2c.Click += new System.EventHandler(this.PlayerMonster2c_Click);
             this.PlayerMonster2c.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // CardGame
