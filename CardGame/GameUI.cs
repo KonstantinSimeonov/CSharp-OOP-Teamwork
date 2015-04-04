@@ -375,5 +375,10 @@
             this.playerEnable = false;
         }
 
+        private void PlayerMonster2c_Click(object sender, EventArgs e)
+        {
+        
+        }
+
     }
 }
