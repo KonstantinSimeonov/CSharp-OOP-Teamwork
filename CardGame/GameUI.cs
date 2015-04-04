@@ -230,6 +230,10 @@
             var nextBox = this.GetFirstEmpty(this.pHandC);
             nextBox.Image = SmallCards.Images[int.Parse(path)];
             nextBox.Image.Tag = path;
+
+            var args2 = new RemainingCardArgs();
+            this.RequestCardsLeft(sender, args2);
+            PlayerCardsInDeck.Text = args2.Remaining.ToString();
         }
 
         private void PDeck_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -302,5 +306,10 @@
         public event EventRaiser End;
 
         public event EventRaiser GameOver;
+
+        private void PlayerCardsInDeck_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

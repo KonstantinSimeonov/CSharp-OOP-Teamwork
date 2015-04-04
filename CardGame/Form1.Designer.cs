@@ -79,6 +79,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.PlayerCardsInDeck = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CompCard5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompCard8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompCard7)).BeginInit();
@@ -596,12 +597,23 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // PlayerCardsInDeck
+            // 
+            this.PlayerCardsInDeck.AutoSize = true;
+            this.PlayerCardsInDeck.Location = new System.Drawing.Point(937, 661);
+            this.PlayerCardsInDeck.Name = "PlayerCardsInDeck";
+            this.PlayerCardsInDeck.Size = new System.Drawing.Size(35, 13);
+            this.PlayerCardsInDeck.TabIndex = 48;
+            this.PlayerCardsInDeck.Text = "label1";
+            this.PlayerCardsInDeck.Click += new System.EventHandler(this.PlayerCardsInDeck_Click);
+            // 
             // CardGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Game.Properties.Resources.GAMEBOARD;
             this.ClientSize = new System.Drawing.Size(1007, 683);
+            this.Controls.Add(this.PlayerCardsInDeck);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -698,6 +710,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CompDeck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerMonster2c)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -752,6 +765,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label PlayerCardsInDeck;
     }
 }
 

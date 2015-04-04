@@ -27,6 +27,7 @@
         public void Subscribe(IFormPublisher publisher)
         {
             publisher.DrawEvent += this.Draw;
+            publisher.RequestCardsLeft += this.ReportCardsNumber;
             
         }
 
