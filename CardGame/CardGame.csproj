@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\Phases.cs" />
     <Compile Include="GameUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +80,7 @@
     <Compile Include="Logic\CustomEventArgs\GameOverArgs.cs" />
     <Compile Include="Logic\CustomEventArgs\PlayCardArgs.cs" />
     <Compile Include="Logic\CustomEventArgs\TargetArgs.cs" />
+    <Compile Include="Logic\CustomEventArgs\TurnArguments.cs" />
     <Compile Include="Logic\Delegates\EventDelegates.cs" />
     <Compile Include="Engine\Engine.cs" />
     <Compile Include="Logic\Factory\Factory.cs" />

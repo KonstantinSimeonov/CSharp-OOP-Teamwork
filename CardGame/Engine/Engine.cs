@@ -8,9 +8,13 @@
     using System;
     using System.Threading.Tasks;
     using System.Windows.Forms;
+    using Logic.CustomEventArgs;
 
-    public class Engine : IEngine
+    public class Engine : IEngine, ISubscriber
     {
+        private bool UIactive, playersTurn;
+        private Phases phase;
+
         private static readonly Engine gameEngine = new Engine();
 
         public static Engine Instance
@@ -20,7 +24,8 @@
 
         private Engine()
         {
-
+            this.UIactive = this.playersTurn = true;
+            this.phase = Phases.Draw;
         }
 
         [STAThread]
@@ -34,8 +39,26 @@
             IBoard board = Board.GameField;
             var player = new HumanPlayer(GameDeck);
             player.Subscribe(form);
-            player.Deck.Cards.Add(fack.CreateCard());
+            this.Subscribe(form);
+            //player.Deck.Cards.Add(fack.CreateCard());
             Application.Run(form);
+        }
+
+        public void Subscribe(IPublisher publisher)
+        {
+            publisher.Raise += this.ReportStateToArgs;
+        }
+
+        private void ReportStateToArgs(object sender, EventArgs e)
+        {
+            var args = e as TurnArgs;
+
+            if (args == null)
+                return;
+
+            args.Phase = this.phase;
+            args.PlayersTurn = this.playersTurn;
+            args.PlayerUIactive = this.UIactive;
         }
     }
 }

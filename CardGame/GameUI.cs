@@ -10,12 +10,10 @@
     using System.Threading.Tasks;
     using System.Windows.Forms;
     using Logic.CustomEventArgs;
+    using Logic.Interfaces;
 
-    public partial class CardGame : Form, Logic.Interfaces.IPublisher
+    public partial class CardGame : Form, IPublisher
     {
-
-        int a;
-        int b;
 
         private PictureBox[] pHandC;
         private PictureBox[] pSpellC;
@@ -64,7 +62,7 @@
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            a = 1;
+
         }
 
 
@@ -80,12 +78,7 @@
 
         private void pictureBox11_MouseUp(object sender, MouseEventArgs e)
         {
-            if (a == 1)
-            {
-                ZoomMonsterCard.Image = PCard2.Image;
-                a = 0;
-                b = 1;
-            }
+
         }
 
         private void pictureBox10_Click(object sender, EventArgs e)
@@ -95,12 +88,7 @@
 
         private void pictureBox6_MouseLeave(object sender, EventArgs e)
         {
-            if (a == 1)
-            {
-                ZoomMonsterCard.Image = PCard2.Image;
-                PCard2.Image = null;
 
-            }
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
