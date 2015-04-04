@@ -149,17 +149,11 @@
         private void PCard6_Click(object sender, EventArgs e)
         {
 
+            
         }
 
         private void CompMonster4_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void PCard1_DoubleClick(object sender, EventArgs e)
-        {
-            if (this.playerEnable)
-                Movecards(PCard1);
 
         }
 
@@ -170,53 +164,14 @@
 
         private void PCard2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if (this.playerEnable)
-                Movecards(PCard2);
+            
         }
 
-
-
-        private void PCard3_DoubleClick(object sender, EventArgs e)
-        {
-            if (this.playerEnable)
-                Movecards(PCard3);
-        }
-
-        private void PCard4_DoubleClick(object sender, EventArgs e)
-        {
-            if (this.playerEnable)
-                Movecards(PCard4);
-        }
-
-        private void PCard5_DoubleClick(object sender, EventArgs e)
-        {
-            if (this.playerEnable)
-                Movecards(PCard5);
-        }
-
-        private void PCard6_DoubleClick(object sender, EventArgs e)
-        {
-            if (this.playerEnable)
-                Movecards(PCard6);
-        }
-
-        private void PCard7_DoubleClick(object sender, EventArgs e)
-        {
-            if (this.playerEnable)
-                Movecards(PCard7);
-        }
-
-        private void PCard8_DoubleClick(object sender, EventArgs e)
-        {
-            if (this.playerEnable)
-                Movecards(PCard8);
-        }
-
-        private void Movecards(PictureBox current)
+        private void PlayOnTheField(PictureBox current, PictureBox[] boxes)
         {
             if (current.Image != null)
             {
-                var box = this.GetFirstEmpty(this.pFieldC);
+                var box = this.GetFirstEmpty(boxes);
                 box.Image = current.Image;
                 current.Image = null;
             }
@@ -224,12 +179,9 @@
 
         private void GameDraw(object sender, EventArgs e)
         {
-            var args = new PlayCardArgs(null);
+            var args = new TakeCardArgs(null);
             this.DrawEvent(sender, args);
-            string path = (args.PlayedCard as Logic.Cards.Card).Path;
-            var nextBox = this.GetFirstEmpty(this.pHandC);
-            nextBox.Image = SmallCards.Images[int.Parse(path)];
-            nextBox.Image.Tag = path;
+            this.AssignPicture(args.PlayedCard, pHandC);
 
             var args2 = new RemainingCardArgs();
             this.RequestCardsLeft(sender, args2);
@@ -246,16 +198,10 @@
 
         }
 
-        public event Logic.Delegates.EventRaiser Raise;
-
-
-
         private void PlayerSpell1_Click(object sender, EventArgs e)
         {
 
         }
-
-
 
         private void PCard8_Click_1(object sender, EventArgs e)
         {
@@ -306,6 +252,50 @@
         public event EventRaiser End;
 
         public event EventRaiser GameOver;
+
+        private PictureBox[] GetField(ICard card)
+        {
+            switch (card.Type)
+            {
+                case Logic.Cards.CardTypes.Spell:
+                    return this.pSpellC;
+                case Logic.Cards.CardTypes.Equip:
+                    return this.pSpellC;
+                case Logic.Cards.CardTypes.Field:
+                    return this.pSpellC;
+                case Logic.Cards.CardTypes.Trap:
+                    return this.pSpellC;
+                case Logic.Cards.CardTypes.Monster:
+                    return this.pFieldC;
+                case Logic.Cards.CardTypes.SpecialMonster:
+                    return this.pFieldC;
+                default:
+                    throw new NotImplementedException("em kot takoa");
+            }
+        }
+
+        private void RaisePlay(object sender, EventArgs e)
+        {
+            var box = sender as PictureBox;
+            var args = new PlayCardArgs(null, box.Image.Tag.ToString());
+            this.PlayCardEvent(sender, args);
+
+            if (args == null)
+                throw new NullReferenceException("Played card cannot be null");
+
+            this.PlayOnTheField(box, this.GetField(args.PlayedCard));
+        }
+
+
+        private void AssignPicture(ICard card, PictureBox[] boxes)
+        {
+            var box = this.GetFirstEmpty(boxes);
+            box.Image = SmallCards.Images[int.Parse(card.Path)];
+            box.Image.Tag = card.Path;
+        }
+
+        private void DummyEffect(object sender, EventArgs e)
+        { }
 
         private void PlayerCardsInDeck_Click(object sender, EventArgs e)
         {

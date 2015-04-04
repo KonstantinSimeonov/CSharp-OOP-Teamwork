@@ -8,7 +8,7 @@
         public int DefenseEffect { get; private set; }
 
         public EquipSpellCard(string name, string description, string path, Effect eff, ParametricEffect paramEff, int attack, int defense)
-            :base(name, description, path, eff, paramEff)
+            :base(name, description, path, eff, paramEff, CardTypes.Equip)
         {
             this.AttackEffect = attack;
             this.DefenseEffect = defense;

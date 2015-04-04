@@ -179,7 +179,8 @@
             this.PCard2.Size = new System.Drawing.Size(73, 87);
             this.PCard2.TabIndex = 6;
             this.PCard2.TabStop = false;
-            this.PCard2.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.PCard2.Click += new System.EventHandler(this.RaisePlay);
+            this.PCard2.DoubleClick += new System.EventHandler(this.DummyEffect);
             this.PCard2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PCard2_MouseDoubleClick);
             this.PCard2.MouseHover += new System.EventHandler(this.SetZoom);
             // 
@@ -190,8 +191,8 @@
             this.PCard8.Size = new System.Drawing.Size(66, 84);
             this.PCard8.TabIndex = 7;
             this.PCard8.TabStop = false;
-            this.PCard8.Click += new System.EventHandler(this.PCard8_Click_1);
-            this.PCard8.DoubleClick += new System.EventHandler(this.PCard8_DoubleClick);
+            this.PCard8.Click += new System.EventHandler(this.RaisePlay);
+            this.PCard8.DoubleClick += new System.EventHandler(this.DummyEffect);
             this.PCard8.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard1
@@ -201,8 +202,8 @@
             this.PCard1.Size = new System.Drawing.Size(66, 84);
             this.PCard1.TabIndex = 8;
             this.PCard1.TabStop = false;
-            this.PCard1.Click += new System.EventHandler(this.PCard6_Click);
-            this.PCard1.DoubleClick += new System.EventHandler(this.PCard1_DoubleClick);
+            this.PCard1.Click += new System.EventHandler(this.RaisePlay);
+            this.PCard1.DoubleClick += new System.EventHandler(this.DummyEffect);
             this.PCard1.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard5
@@ -212,8 +213,8 @@
             this.PCard5.Size = new System.Drawing.Size(66, 84);
             this.PCard5.TabIndex = 9;
             this.PCard5.TabStop = false;
-            this.PCard5.Click += new System.EventHandler(this.PCard5_Click);
-            this.PCard5.DoubleClick += new System.EventHandler(this.PCard5_DoubleClick);
+            this.PCard5.Click += new System.EventHandler(this.RaisePlay);
+            this.PCard5.DoubleClick += new System.EventHandler(this.DummyEffect);
             this.PCard5.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard6
@@ -223,8 +224,8 @@
             this.PCard6.Size = new System.Drawing.Size(66, 84);
             this.PCard6.TabIndex = 10;
             this.PCard6.TabStop = false;
-            this.PCard6.Click += new System.EventHandler(this.pictureBox10_Click);
-            this.PCard6.DoubleClick += new System.EventHandler(this.PCard6_DoubleClick);
+            this.PCard6.Click += new System.EventHandler(this.RaisePlay);
+            this.PCard6.DoubleClick += new System.EventHandler(this.DummyEffect);
             this.PCard6.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // ZoomMonsterCard
@@ -250,8 +251,8 @@
             this.SmallCards.Images.SetKeyName(4, "4.jpg");
             this.SmallCards.Images.SetKeyName(5, "5.jpg");
             this.SmallCards.Images.SetKeyName(6, "7.jpg");
-            this.SmallCards.Images.SetKeyName(7, "8.jpg");
-            this.SmallCards.Images.SetKeyName(8, "9.jpg");
+            this.SmallCards.Images.SetKeyName(7, "9.jpg");
+            this.SmallCards.Images.SetKeyName(8, "8.jpg");
             this.SmallCards.Images.SetKeyName(9, "10.jpg");
             this.SmallCards.Images.SetKeyName(10, "11.jpg");
             this.SmallCards.Images.SetKeyName(11, "12.jpg");
@@ -445,8 +446,8 @@
             this.PCard4.Size = new System.Drawing.Size(66, 84);
             this.PCard4.TabIndex = 32;
             this.PCard4.TabStop = false;
-            this.PCard4.Click += new System.EventHandler(this.PCard2_Click);
-            this.PCard4.DoubleClick += new System.EventHandler(this.PCard4_DoubleClick);
+            this.PCard4.Click += new System.EventHandler(this.RaisePlay);
+            this.PCard4.DoubleClick += new System.EventHandler(this.DummyEffect);
             this.PCard4.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard7
@@ -456,7 +457,8 @@
             this.PCard7.Size = new System.Drawing.Size(66, 84);
             this.PCard7.TabIndex = 33;
             this.PCard7.TabStop = false;
-            this.PCard7.DoubleClick += new System.EventHandler(this.PCard7_DoubleClick);
+            this.PCard7.Click += new System.EventHandler(this.RaisePlay);
+            this.PCard7.DoubleClick += new System.EventHandler(this.DummyEffect);
             this.PCard7.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard3
@@ -466,8 +468,8 @@
             this.PCard3.Size = new System.Drawing.Size(66, 84);
             this.PCard3.TabIndex = 34;
             this.PCard3.TabStop = false;
-            this.PCard3.Click += new System.EventHandler(this.PCard1_Click);
-            this.PCard3.DoubleClick += new System.EventHandler(this.PCard3_DoubleClick);
+            this.PCard3.Click += new System.EventHandler(this.RaisePlay);
+            this.PCard3.DoubleClick += new System.EventHandler(this.DummyEffect);
             this.PCard3.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // CompCard1
@@ -600,6 +602,7 @@
             // PlayerCardsInDeck
             // 
             this.PlayerCardsInDeck.AutoSize = true;
+            this.PlayerCardsInDeck.Enabled = false;
             this.PlayerCardsInDeck.Location = new System.Drawing.Point(937, 661);
             this.PlayerCardsInDeck.Name = "PlayerCardsInDeck";
             this.PlayerCardsInDeck.Size = new System.Drawing.Size(35, 13);

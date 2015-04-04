@@ -9,11 +9,12 @@
     {
         private string imagePath;
 
-        public Card(string name, string description, string path)
+        public Card(string name, string description, string path, CardTypes type)
         {
             this.Name = name;
             this.Description = description;
             this.Path = path;
+            this.Type = type;
         }
 
         public bool FaceUp { get; protected set; }
@@ -47,5 +48,8 @@
         {
             return string.Format("{0}\n{1}\n{2}", this.Name, this.GetType(), this.Description);
         }
+
+
+        public CardTypes Type { get; private set; }
     }
 }

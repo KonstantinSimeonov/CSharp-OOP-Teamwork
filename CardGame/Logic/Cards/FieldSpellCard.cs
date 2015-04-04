@@ -8,7 +8,7 @@
         public int Duration { get; private set; }
 
         public FieldSpellCard(string name, string description, string path, Effect eff,ParametricEffect paramEff, int duration)
-            : base(name, description, path, eff, paramEff)
+            : base(name, description, path, eff, paramEff, CardTypes.Field)
         {
             this.Duration = duration;
         }

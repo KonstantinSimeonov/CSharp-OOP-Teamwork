@@ -9,7 +9,7 @@
         public Effect effect;
 
         public SpecialMonster(string name, string description, string path, int attack, int defense, Effect eff)
-         :base(name, description, path, attack, defense)
+         :base(name, description, path, attack, defense, CardTypes.SpecialMonster)
         {
             this.effect = eff;
         }

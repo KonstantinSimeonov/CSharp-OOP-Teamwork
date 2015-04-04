@@ -5,7 +5,7 @@
     public class TrapCard : EffectCard, IFaceDownCard, ISpecialCard
     {
         public TrapCard(string name, string description, string path, Effect eff, ParametricEffect paramEff)
-            :base(name, description, path, eff, paramEff)
+            :base(name, description, path,CardTypes.Trap, eff, paramEff)
         {
         
         }

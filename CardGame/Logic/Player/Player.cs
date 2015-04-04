@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using Logic.Interfaces;
     using Logic.Cards;
     using Logic.CustomEventArgs;
@@ -28,7 +29,7 @@
         {
             publisher.DrawEvent += this.Draw;
             publisher.RequestCardsLeft += this.ReportCardsNumber;
-            
+            publisher.PlayCardEvent += this.PlayWithArguments;
         }
 
         public int LifePoints { get; private set; }
@@ -49,13 +50,19 @@
 
         public void Draw(object sender, EventArgs e)
         {
-            var args = e as PlayCardArgs;
+            var args = e as TakeCardArgs;
             if (args == null)
                 throw new InvalidCastException("eba si makata");
 
             var drawn = deck.NextCard();
             args.PlayedCard = drawn;
             hand.Add(drawn);
+        }
+        private void PlayWithArguments(object sender, EventArgs e)
+        {
+            var args = e as PlayCardArgs;
+            args.PlayedCard = this.Hand.Single(x => x.Path == args.Path);
+            this.PlayCard(args.PlayedCard);
         }
 
         public void PlayCard(ICard card)

@@ -68,6 +68,7 @@
     </Compile>
     <Compile Include="Logic\Board\Board.cs" />
     <Compile Include="Logic\Cards\Card.cs" />
+    <Compile Include="Logic\Cards\CardTypes.cs" />
     <Compile Include="Logic\Cards\Deck.cs" />
     <Compile Include="Logic\Cards\EffectCard.cs" />
     <Compile Include="Logic\Cards\Effects.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Logic\Cards\TrapCard.cs" />
     <Compile Include="Logic\CustomEventArgs\GameOverArgs.cs" />
     <Compile Include="Logic\CustomEventArgs\PlayCardArgs.cs" />
+    <Compile Include="Logic\CustomEventArgs\TakeCardArgs.cs" />
     <Compile Include="Logic\CustomEventArgs\RemainingCardArgs.cs" />
     <Compile Include="Logic\CustomEventArgs\TargetArgs.cs" />
     <Compile Include="Logic\CustomEventArgs\TurnArguments.cs" />

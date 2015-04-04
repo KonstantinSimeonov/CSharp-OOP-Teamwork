@@ -5,8 +5,8 @@
     public class MonsterCard : Card, IMonsterCard
     {
 
-        public MonsterCard(string name, string description, string path, int attack, int defense)
-            :base(name, description, path)
+        public MonsterCard(string name, string description, string path, int attack, int defense, CardTypes type = CardTypes.Monster)
+            :base(name, description, path, type)
         {
             this.DefensePoint = defense;
             this.AttackPoints = attack;

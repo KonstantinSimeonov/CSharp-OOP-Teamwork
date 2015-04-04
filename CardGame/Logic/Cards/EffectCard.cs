@@ -14,8 +14,8 @@
         protected Effect effect;
         protected ParametricEffect paramEffect;
 
-        public EffectCard(string name, string description, string path, Effect eff, ParametricEffect paramEff)
-            :base(name, description, path)
+        public EffectCard(string name, string description, string path, CardTypes type, Effect eff, ParametricEffect paramEff)
+            :base(name, description, path, type)
         {
             this.effect = eff;
             this.paramEffect = paramEff;
