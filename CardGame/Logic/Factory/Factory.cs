@@ -75,7 +75,7 @@
         public IDeck AssembleDeck()
         {
             var deck = new Deck();
-            for (int i = 0; i < deckInfo.Length - 1; i++)
+            for (int i = 0; i < deckInfo.Length; i++)
             {
                 deck.Cards.Add(this.CreateCard());
             }
