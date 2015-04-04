@@ -10,7 +10,7 @@
     using System.Windows.Forms;
     using Logic.CustomEventArgs;
 
-    public class Engine : IEngine, ISubscriber
+    public class Engine : IEngine, IFormSubscriber
     {
         private bool UIactive, playersTurn;
         private Phases phase;
@@ -47,9 +47,9 @@
             Application.Run(form);
         }
 
-        public void Subscribe(IPublisher publisher)
+        public void Subscribe(IFormPublisher publisher)
         {
-            publisher.Raise += this.ReportStateToArgs;
+            publisher.RequestStateReport += this.ReportStateToArgs;
         }
 
         private void ReportStateToArgs(object sender, EventArgs e)

@@ -5,7 +5,7 @@
     using System.Collections.Generic;
     using Logic.Interfaces;
 
-    public abstract class Card : ICard, IFaceDownCard, IParsableCard
+    public abstract class Card : ICard, IFaceDownCard
     {
         private string imagePath;
 

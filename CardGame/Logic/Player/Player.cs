@@ -8,7 +8,7 @@
     using Logic.Delegates;
     
 
-    public abstract class Player : IPlayer, ISubscriber
+    public abstract class Player : IPlayer, IFormSubscriber
     {
         private const int LIFE_POINTS = 4000;
         private const int MANA_POINTS = 100;
@@ -24,9 +24,10 @@
             this.Deck = deck;
         }
 
-        public void Subscribe(IPublisher publisher)
+        public void Subscribe(IFormPublisher publisher)
         {
-            publisher.Raise += this.Draw;
+            publisher.DrawEvent += this.Draw;
+            
         }
 
         public int LifePoints { get; private set; }
@@ -51,11 +52,9 @@
             if (args == null)
                 throw new InvalidCastException("eba si makata");
 
-
             var drawn = deck.NextCard();
             args.PlayedCard = drawn;
             hand.Add(drawn);
-            //Raise(this, new PlayCardArgs(drawn));
         }
 
         public void PlayCard(ICard card)
@@ -74,6 +73,16 @@
                 this.ManaPoints -= asEffectCard.ManaCost;
                 this.Hand.Remove(card);
             }
+        }
+
+        private void ReportCardsNumber(object sender, EventArgs e)
+        {
+            var args = e as RemainingCardArgs;
+
+            if (args == null)
+                return;
+
+            args.Remaining = this.deck.CardsRemaining;
         }
     }
 }

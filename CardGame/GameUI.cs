@@ -11,8 +11,9 @@
     using System.Windows.Forms;
     using Logic.CustomEventArgs;
     using Logic.Interfaces;
+    using Logic.Delegates;
 
-    public partial class CardGame : Form, IPublisher
+    public partial class CardGame : Form, IFormPublisher
     {
 
         private PictureBox[] pHandC;
@@ -123,7 +124,7 @@
 
         }
 
-        
+
 
         private void PCard2_Click(object sender, EventArgs e)
         {
@@ -157,8 +158,8 @@
 
         private void PCard1_DoubleClick(object sender, EventArgs e)
         {
-            if(this.playerEnable)
-            Movecards(PCard1);
+            if (this.playerEnable)
+                Movecards(PCard1);
 
         }
 
@@ -170,7 +171,7 @@
         private void PCard2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (this.playerEnable)
-            Movecards(PCard2);
+                Movecards(PCard2);
         }
 
 
@@ -178,39 +179,39 @@
         private void PCard3_DoubleClick(object sender, EventArgs e)
         {
             if (this.playerEnable)
-            Movecards(PCard3);
+                Movecards(PCard3);
         }
 
         private void PCard4_DoubleClick(object sender, EventArgs e)
         {
             if (this.playerEnable)
-            Movecards(PCard4);
+                Movecards(PCard4);
         }
 
         private void PCard5_DoubleClick(object sender, EventArgs e)
         {
             if (this.playerEnable)
-            Movecards(PCard5);
+                Movecards(PCard5);
         }
 
         private void PCard6_DoubleClick(object sender, EventArgs e)
         {
             if (this.playerEnable)
-            Movecards(PCard6);
+                Movecards(PCard6);
         }
 
         private void PCard7_DoubleClick(object sender, EventArgs e)
         {
             if (this.playerEnable)
-            Movecards(PCard7);
+                Movecards(PCard7);
         }
 
         private void PCard8_DoubleClick(object sender, EventArgs e)
         {
-            if(this.playerEnable)
-            Movecards(PCard8);
+            if (this.playerEnable)
+                Movecards(PCard8);
         }
-        
+
         private void Movecards(PictureBox current)
         {
             if (current.Image != null)
@@ -224,7 +225,7 @@
         private void GameDraw(object sender, EventArgs e)
         {
             var args = new PlayCardArgs(null);
-            Raise(sender, args);
+            this.DrawEvent(sender, args);
             string path = (args.PlayedCard as Logic.Cards.Card).Path;
             var nextBox = this.GetFirstEmpty(this.pHandC);
             nextBox.Image = SmallCards.Images[int.Parse(path)];
@@ -233,14 +234,12 @@
 
         private void PDeck_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            //DrawCard(sender, e);
-            //GameDraw(sender, e);
-
+           
         }
 
         private void PDeck_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         public event Logic.Delegates.EventRaiser Raise;
@@ -282,8 +281,26 @@
 
         private void PlayerMonster2c_Click(object sender, EventArgs e)
         {
-        
+
         }
 
+
+        public event EventRaiser DrawEvent;
+
+        public event EventRaiser RequestStateReport;
+
+        public event EventRaiser RequestCardsLeft;
+
+        public event EventRaiser PlayCardEvent;
+
+        public event EventRaiser Main1;
+
+        public event EventRaiser Battle;
+
+        public event EventRaiser Main2;
+
+        public event EventRaiser End;
+
+        public event EventRaiser GameOver;
     }
 }

@@ -1,7 +1,7 @@
 ﻿namespace Logic.Interfaces
 {
-   public interface ISubscriber
+   public interface IFormSubscriber
     {
-       void Subscribe(IPublisher publisher);
+       void Subscribe(IFormPublisher publisher);
     }
 }

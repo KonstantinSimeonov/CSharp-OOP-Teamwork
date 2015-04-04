@@ -79,6 +79,7 @@
     <Compile Include="Logic\Cards\TrapCard.cs" />
     <Compile Include="Logic\CustomEventArgs\GameOverArgs.cs" />
     <Compile Include="Logic\CustomEventArgs\PlayCardArgs.cs" />
+    <Compile Include="Logic\CustomEventArgs\RemainingCardArgs.cs" />
     <Compile Include="Logic\CustomEventArgs\TargetArgs.cs" />
     <Compile Include="Logic\CustomEventArgs\TurnArguments.cs" />
     <Compile Include="Logic\Delegates\EventDelegates.cs" />
@@ -97,7 +98,6 @@
     <Compile Include="Logic\Interfaces\IManaCostable.cs" />
     <Compile Include="Logic\Interfaces\IMenu.cs" />
     <Compile Include="Logic\Interfaces\IMonsterCard.cs" />
-    <Compile Include="Logic\Interfaces\IParsableCard.cs" />
     <Compile Include="Logic\Interfaces\IPlayer.cs" />
     <Compile Include="Logic\Interfaces\IPublisher.cs" />
     <Compile Include="Logic\Interfaces\ISpecialCard.cs" />
