@@ -12,7 +12,7 @@
 
     public class Engine : IEngine, IFormSubscriber
     {
-        private bool UIactive, playersTurn;
+        private bool playersTurn;
         private Phases phase;
 
         private static readonly Engine gameEngine = new Engine();
@@ -27,7 +27,7 @@
 
         private Engine()
         {
-            this.UIactive = this.playersTurn = true;
+            this.playersTurn = true;
             this.phase = Phases.Draw;
         }
 
@@ -43,13 +43,16 @@
             var player = new HumanPlayer(GameDeck);
             player.Subscribe(form);
             this.Subscribe(form);
-            //player.Deck.Cards.Add(fack.CreateCard());
             Application.Run(form);
         }
 
         public void Subscribe(IFormPublisher publisher)
         {
             publisher.RequestStateReport += this.ReportStateToArgs;
+            publisher.DrawEvent += this.UpdateWithDraw;
+            publisher.Battle += this.UpdateWithBattle;
+            publisher.Main2 += this.UpdateWithMain2;
+            publisher.End += this.UpdateWithEnd;
         }
 
         private void ReportStateToArgs(object sender, EventArgs e)
@@ -61,7 +64,23 @@
 
             args.Phase = this.phase;
             args.PlayersTurn = this.playersTurn;
-            args.PlayerUIactive = this.UIactive;
+        }
+
+        private void UpdateWithDraw(object sender, EventArgs e)
+        {
+            this.phase = Phases.Main1;
+        }
+        private void UpdateWithBattle(object sender, EventArgs e)
+        {
+            this.phase = Phases.Battle;
+        }
+        private void UpdateWithMain2(object sender, EventArgs e)
+        {
+            this.phase = Phases.Main2;
+        }
+        private void UpdateWithEnd(object sender, EventArgs e)
+        {
+            this.playersTurn = !this.playersTurn;
         }
     }
 }

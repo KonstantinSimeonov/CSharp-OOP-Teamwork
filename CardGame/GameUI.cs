@@ -149,7 +149,7 @@
         private void PCard6_Click(object sender, EventArgs e)
         {
 
-            
+
         }
 
         private void CompMonster4_Click(object sender, EventArgs e)
@@ -164,7 +164,7 @@
 
         private void PCard2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            
+
         }
 
         private void PlayOnTheField(PictureBox current, PictureBox[] boxes)
@@ -190,7 +190,7 @@
 
         private void PDeck_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-           
+
         }
 
         private void PDeck_Click(object sender, EventArgs e)
@@ -213,20 +213,17 @@
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (this.playerEnable)
                 this.GameDraw(sender, e);
+                this.DrawButton.Enabled = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.playerEnable = false;
+            this.DisablePlayerUI();
+            this.End(sender, e);
         }
 
         private void PlayerMonster2c_Click(object sender, EventArgs e)
@@ -300,6 +297,38 @@
         private void PlayerCardsInDeck_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DisablePlayerUI()
+        {
+            foreach (var box in this.pHandC)
+            {
+                box.Enabled = false;
+            }
+
+            this.Phase1Button.Enabled = this.Phase2Button.Enabled = this.BattleButton.Enabled = this.EndTurnButton.Enabled = false;
+
+        }
+
+        private void BattleButton_Click(object sender, EventArgs e)
+        {
+            this.Phase1Button.Enabled = false;
+            // TODO: implement battle
+            this.Battle(sender, e);
+        }
+
+        private void Phase1Button_Click(object sender, EventArgs e)
+        {
+            this.BattleButton.Enabled = true;
+            // TODO: do it correctly
+            this.Main1(sender, e);
+        }
+
+        private void Phase2Button_Click(object sender, EventArgs e)
+        {
+            this.BattleButton.Enabled = false;
+            // TODO: do it correctly
+            this.Main2(sender, e);
         }
     }
 }

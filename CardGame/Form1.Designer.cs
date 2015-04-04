@@ -74,11 +74,11 @@
             this.PDeck = new System.Windows.Forms.PictureBox();
             this.CompDeck = new System.Windows.Forms.PictureBox();
             this.PlayerMonster2c = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.DrawButton = new System.Windows.Forms.Button();
+            this.Phase1Button = new System.Windows.Forms.Button();
+            this.BattleButton = new System.Windows.Forms.Button();
+            this.Phase2Button = new System.Windows.Forms.Button();
+            this.EndTurnButton = new System.Windows.Forms.Button();
             this.PlayerCardsInDeck = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CompCard5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompCard8)).BeginInit();
@@ -180,7 +180,6 @@
             this.PCard2.TabIndex = 6;
             this.PCard2.TabStop = false;
             this.PCard2.Click += new System.EventHandler(this.RaisePlay);
-            this.PCard2.DoubleClick += new System.EventHandler(this.DummyEffect);
             this.PCard2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PCard2_MouseDoubleClick);
             this.PCard2.MouseHover += new System.EventHandler(this.SetZoom);
             // 
@@ -192,7 +191,6 @@
             this.PCard8.TabIndex = 7;
             this.PCard8.TabStop = false;
             this.PCard8.Click += new System.EventHandler(this.RaisePlay);
-            this.PCard8.DoubleClick += new System.EventHandler(this.DummyEffect);
             this.PCard8.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard1
@@ -203,7 +201,6 @@
             this.PCard1.TabIndex = 8;
             this.PCard1.TabStop = false;
             this.PCard1.Click += new System.EventHandler(this.RaisePlay);
-            this.PCard1.DoubleClick += new System.EventHandler(this.DummyEffect);
             this.PCard1.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard5
@@ -214,7 +211,6 @@
             this.PCard5.TabIndex = 9;
             this.PCard5.TabStop = false;
             this.PCard5.Click += new System.EventHandler(this.RaisePlay);
-            this.PCard5.DoubleClick += new System.EventHandler(this.DummyEffect);
             this.PCard5.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard6
@@ -225,7 +221,6 @@
             this.PCard6.TabIndex = 10;
             this.PCard6.TabStop = false;
             this.PCard6.Click += new System.EventHandler(this.RaisePlay);
-            this.PCard6.DoubleClick += new System.EventHandler(this.DummyEffect);
             this.PCard6.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // ZoomMonsterCard
@@ -447,7 +442,6 @@
             this.PCard4.TabIndex = 32;
             this.PCard4.TabStop = false;
             this.PCard4.Click += new System.EventHandler(this.RaisePlay);
-            this.PCard4.DoubleClick += new System.EventHandler(this.DummyEffect);
             this.PCard4.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard7
@@ -458,7 +452,6 @@
             this.PCard7.TabIndex = 33;
             this.PCard7.TabStop = false;
             this.PCard7.Click += new System.EventHandler(this.RaisePlay);
-            this.PCard7.DoubleClick += new System.EventHandler(this.DummyEffect);
             this.PCard7.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard3
@@ -469,7 +462,6 @@
             this.PCard3.TabIndex = 34;
             this.PCard3.TabStop = false;
             this.PCard3.Click += new System.EventHandler(this.RaisePlay);
-            this.PCard3.DoubleClick += new System.EventHandler(this.DummyEffect);
             this.PCard3.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // CompCard1
@@ -551,53 +543,55 @@
             this.PlayerMonster2c.Click += new System.EventHandler(this.PlayerMonster2c_Click);
             this.PlayerMonster2c.MouseHover += new System.EventHandler(this.SetZoom);
             // 
-            // button1
+            // DrawButton
             // 
-            this.button1.Location = new System.Drawing.Point(8, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 43;
-            this.button1.Text = "Draw";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.DrawButton.Location = new System.Drawing.Point(8, 21);
+            this.DrawButton.Name = "DrawButton";
+            this.DrawButton.Size = new System.Drawing.Size(75, 23);
+            this.DrawButton.TabIndex = 43;
+            this.DrawButton.Text = "Draw";
+            this.DrawButton.UseVisualStyleBackColor = true;
+            this.DrawButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // Phase1Button
             // 
-            this.button2.Location = new System.Drawing.Point(8, 59);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 44;
-            this.button2.Text = "Task 1";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Phase1Button.Location = new System.Drawing.Point(8, 59);
+            this.Phase1Button.Name = "Phase1Button";
+            this.Phase1Button.Size = new System.Drawing.Size(75, 23);
+            this.Phase1Button.TabIndex = 44;
+            this.Phase1Button.Text = "Phase 1";
+            this.Phase1Button.UseVisualStyleBackColor = true;
+            this.Phase1Button.Click += new System.EventHandler(this.Phase1Button_Click);
             // 
-            // button3
+            // BattleButton
             // 
-            this.button3.Location = new System.Drawing.Point(8, 97);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 45;
-            this.button3.Text = "Battle";
-            this.button3.UseVisualStyleBackColor = true;
+            this.BattleButton.Location = new System.Drawing.Point(8, 97);
+            this.BattleButton.Name = "BattleButton";
+            this.BattleButton.Size = new System.Drawing.Size(75, 23);
+            this.BattleButton.TabIndex = 45;
+            this.BattleButton.Text = "Battle";
+            this.BattleButton.UseVisualStyleBackColor = true;
+            this.BattleButton.Click += new System.EventHandler(this.BattleButton_Click);
             // 
-            // button4
+            // Phase2Button
             // 
-            this.button4.Location = new System.Drawing.Point(8, 137);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 46;
-            this.button4.Text = "Task 2";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Phase2Button.Location = new System.Drawing.Point(8, 137);
+            this.Phase2Button.Name = "Phase2Button";
+            this.Phase2Button.Size = new System.Drawing.Size(75, 23);
+            this.Phase2Button.TabIndex = 46;
+            this.Phase2Button.Text = "Phase2";
+            this.Phase2Button.UseVisualStyleBackColor = true;
+            this.Phase2Button.Click += new System.EventHandler(this.Phase2Button_Click);
             // 
-            // button5
+            // EndTurnButton
             // 
-            this.button5.Location = new System.Drawing.Point(8, 183);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 47;
-            this.button5.Text = "End";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.EndTurnButton.Location = new System.Drawing.Point(8, 183);
+            this.EndTurnButton.Name = "EndTurnButton";
+            this.EndTurnButton.Size = new System.Drawing.Size(75, 23);
+            this.EndTurnButton.TabIndex = 47;
+            this.EndTurnButton.Text = "EndTurn";
+            this.EndTurnButton.UseVisualStyleBackColor = true;
+            this.EndTurnButton.Click += new System.EventHandler(this.button5_Click);
             // 
             // PlayerCardsInDeck
             // 
@@ -617,11 +611,11 @@
             this.BackgroundImage = global::Game.Properties.Resources.GAMEBOARD;
             this.ClientSize = new System.Drawing.Size(1007, 683);
             this.Controls.Add(this.PlayerCardsInDeck);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.EndTurnButton);
+            this.Controls.Add(this.Phase2Button);
+            this.Controls.Add(this.BattleButton);
+            this.Controls.Add(this.Phase1Button);
+            this.Controls.Add(this.DrawButton);
             this.Controls.Add(this.PlayerMonster2c);
             this.Controls.Add(this.CompDeck);
             this.Controls.Add(this.PDeck);
@@ -763,11 +757,11 @@
         private System.Windows.Forms.PictureBox PDeck;
         private System.Windows.Forms.PictureBox CompDeck;
         private System.Windows.Forms.PictureBox PlayerMonster2c;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button DrawButton;
+        private System.Windows.Forms.Button Phase1Button;
+        private System.Windows.Forms.Button BattleButton;
+        private System.Windows.Forms.Button Phase2Button;
+        private System.Windows.Forms.Button EndTurnButton;
         private System.Windows.Forms.Label PlayerCardsInDeck;
     }
 }
