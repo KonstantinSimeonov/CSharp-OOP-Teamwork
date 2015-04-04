@@ -109,24 +109,24 @@
     <Compile Include="Logic\Player\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="GameUI.resx">
       <DependentUpon>GameUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Logic\SkeletonDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -135,9 +135,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\5WPLWxn.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\image_by_infinite_nova-d6fgjfp.jpg" />
@@ -155,21 +152,8 @@
     <None Include="Resources\usethis1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\usethisOpen.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\board.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\monsters_109670_21.jpg" />
-    <None Include="Resources\monsters_109670_2.jpg" />
-    <None Include="Resources\51aPSANM2YL.jpg" />
+    <Content Include="Resources\GAMEBOARD.png" />
     <Content Include="Logic\Cards\DeckInfo.txt" />
-    <Content Include="Resources\Enlarged board.png" />
-    <None Include="Resources\th %282%29.jpg" />
-    <None Include="Resources\th %281%29.jpg" />
-    <None Include="Resources\img.jpg" />
-    <None Include="Resources\th.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

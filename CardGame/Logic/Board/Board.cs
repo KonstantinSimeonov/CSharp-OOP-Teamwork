@@ -13,8 +13,8 @@
         private IList<IMonsterCard> aiMonsters;
         private IList<IManaCostable> playerEffectCards;
         private IList<IManaCostable> aiEffectCards;
-        private IDeck playerDeck;
-        private IDeck aiDeck;
+        //private IDeck playerDeck;
+        //private IDeck aiDeck;
         private IList<ICard> playerGraveyard;
         private IList<ICard> aiGraveyard;
 

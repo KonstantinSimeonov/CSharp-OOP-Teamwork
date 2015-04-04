@@ -223,7 +223,7 @@
             // 
             // ZoomMonsterCard
             // 
-            this.ZoomMonsterCard.Image = global::Game.Properties.Resources.monsters_109670_2;
+            this.ZoomMonsterCard.Image = global::Game.Properties.Resources.image_by_infinite_nova_d6fgjfp;
             this.ZoomMonsterCard.Location = new System.Drawing.Point(-18, 212);
             this.ZoomMonsterCard.MaximumSize = new System.Drawing.Size(250, 400);
             this.ZoomMonsterCard.Name = "ZoomMonsterCard";
@@ -546,7 +546,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::Game.Properties.Resources.GAMEBOARD;
             this.ClientSize = new System.Drawing.Size(1003, 683);
             this.Controls.Add(this.PlayerMonster2c);
             this.Controls.Add(this.CompDeck);

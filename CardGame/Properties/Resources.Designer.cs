@@ -63,29 +63,9 @@ namespace Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _51aPSANM2YL {
+        internal static System.Drawing.Bitmap GAMEBOARD {
             get {
-                object obj = ResourceManager.GetObject("51aPSANM2YL", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _5WPLWxn {
-            get {
-                object obj = ResourceManager.GetObject("5WPLWxn", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap board {
-            get {
-                object obj = ResourceManager.GetObject("board", resourceCulture);
+                object obj = ResourceManager.GetObject("GAMEBOARD", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,66 +103,6 @@ namespace Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap img {
-            get {
-                object obj = ResourceManager.GetObject("img", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap monsters_109670_2 {
-            get {
-                object obj = ResourceManager.GetObject("monsters_109670_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap monsters_109670_21 {
-            get {
-                object obj = ResourceManager.GetObject("monsters_109670_21", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap th {
-            get {
-                object obj = ResourceManager.GetObject("th", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap th__1_ {
-            get {
-                object obj = ResourceManager.GetObject("th (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap th__2_ {
-            get {
-                object obj = ResourceManager.GetObject("th (2)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap use_this {
             get {
                 object obj = ResourceManager.GetObject("use this", resourceCulture);
@@ -196,16 +116,6 @@ namespace Game.Properties {
         internal static System.Drawing.Bitmap usethis1 {
             get {
                 object obj = ResourceManager.GetObject("usethis1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap usethisOpen {
-            get {
-                object obj = ResourceManager.GetObject("usethisOpen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

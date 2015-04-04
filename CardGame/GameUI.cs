@@ -206,34 +206,43 @@
         /// <param name="current"></param>
         private void Movecards(PictureBox current)
         {
-            if (PlayerMonster1.Image == null)
+            if (current.Image != null)
             {
-                PlayerMonster1.Image = current.Image;
+                var box = this.GetFirstEmpty(this.pFieldC);
+                box.Image = current.Image;
                 current.Image = null;
             }
-            else if (PlayerMonster2c.Image == null)
-            {
-                PlayerMonster2c.Image = current.Image;
-                current.Image = null;
-            }
-            else if (PlayerMonster3.Image == null)
-            {
-                PlayerMonster3.Image = current.Image;
-                current.Image = null;
+            
+            
 
-            }
-            else if (PlayerMonster4.Image == null)
-            {
-                PlayerMonster4.Image = current.Image;
-                current.Image = null;
+            //if (PlayerMonster1.Image == null)
+            //{
+            //    PlayerMonster1.Image = current.Image;
+            //    current.Image = null;
+            //}
+            //else if (PlayerMonster2c.Image == null)
+            //{
+            //    PlayerMonster2c.Image = current.Image;
+            //    current.Image = null;
+            //}
+            //else if (PlayerMonster3.Image == null)
+            //{
+            //    PlayerMonster3.Image = current.Image;
+            //    current.Image = null;
 
-            }
-            else if (PlayerMonster5.Image == null)
-            {
-                PlayerMonster5.Image = current.Image;
-                current.Image = null;
+            //}
+            //else if (PlayerMonster4.Image == null)
+            //{
+            //    PlayerMonster4.Image = current.Image;
+            //    current.Image = null;
 
-            }
+            //}
+            //else if (PlayerMonster5.Image == null)
+            //{
+            //    PlayerMonster5.Image = current.Image;
+            //    current.Image = null;
+
+            //}
         }
 
         private void GameDraw(object sender, EventArgs e)
