@@ -5,11 +5,16 @@
     using Logic.Interfaces;
     using Logic.Cards;
     using Logic.Player;
+    using Logic.Delegates;
     using System.Reflection;
     using System.Runtime.Serialization.Formatters.Binary;
 
     public class Factory : IFactory
     {
+        // TODO: implement serializing, encryption and encoding of the deck cards
+
+
+        #region Constants
         private const char SPLIT = ',';
         private const char NEWLINE = '\n';
         private const string MONSTER_CARD = "Monster";
@@ -21,7 +26,7 @@
         private const string INVALID_ARG = "Wrong message from parsed txt";
 
         private const string path = @"..\..\CardInfo\CardInfo.txt";
-
+        #endregion
 
         private static readonly IFactory factory = new Factory();
 
@@ -41,16 +46,6 @@
             deckInfo = cardList.Split('\n');
             this.currentLine = 0;
         }
-
-        //private void Serizalize()
-        //{
-        //    var stream = new FileStream(path);
-        //    var formatter = new BinaryFormatter();
-
-        //    var cardList = File.ReadAllText(path);
-        //    formatter.Serialize(stream, cardList);
-        //}
-        
 
         public ICard CreateCard()
         {

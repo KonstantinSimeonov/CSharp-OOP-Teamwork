@@ -3,11 +3,13 @@
     using System;
     using Logic.Interfaces;
 
-    class TakeCardArgs : EventArgs
+    class DrawCardArgs : EventArgs
     {
         public ICard PlayedCard { get; set; }
 
-        public TakeCardArgs(ICard card)
+        public int CardsRemaining { get; set; }
+
+        public DrawCardArgs(ICard card)
         {
             this.PlayedCard = card;
         }

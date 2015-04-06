@@ -34,6 +34,8 @@
         [STAThread]
         public void Run()
         {
+            // TODO: refactoring
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var fack = Factory.Instance;

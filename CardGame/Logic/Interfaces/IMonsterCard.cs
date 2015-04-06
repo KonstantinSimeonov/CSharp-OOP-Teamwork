@@ -10,7 +10,6 @@
 
         int AttackPoints { get; }
         int DefensePoint { get; }
-        SampleType Type { get; }
         bool Position { get; }
 
         void Attack(IMonsterCard monster);

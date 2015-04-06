@@ -2,14 +2,17 @@
 {
     using System;
     using Logic.Interfaces;
-    class PlayCardArgs : TakeCardArgs
+    class PlayCardArgs : DrawCardArgs
     {
         public string Path { get; set; }
 
-        public PlayCardArgs(ICard card, string path)
+        public bool FaceUp { get; set; }
+
+        public PlayCardArgs(ICard card, string path, bool faceUp)
             :base(card)
         {
             this.Path = path;
+            this.FaceUp = faceUp;
         }
     }
 }

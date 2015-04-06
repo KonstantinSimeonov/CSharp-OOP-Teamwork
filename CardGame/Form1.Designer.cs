@@ -200,7 +200,7 @@
             this.PCard1.Size = new System.Drawing.Size(66, 84);
             this.PCard1.TabIndex = 8;
             this.PCard1.TabStop = false;
-            this.PCard1.Click += new System.EventHandler(this.RaisePlay);
+            this.PCard1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.RaisePlay);
             this.PCard1.MouseHover += new System.EventHandler(this.SetZoom);
             // 
             // PCard5

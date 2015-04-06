@@ -1,13 +1,13 @@
 ﻿namespace Logic.Cards
 {
     using Logic.Interfaces;
+    using Logic.Delegates;
 
     public abstract class EffectCard : Card, IManaCostable
     {
         // hold effect functions
 
-        public delegate void Effect();
-        public delegate void ParametricEffect(int attack, int defense);
+        
 
         // effect variables
 

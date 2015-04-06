@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using Logic.Interfaces;
+    using Logic.Delegates;
 
     public class FieldSpellCard : SpellCard
     {

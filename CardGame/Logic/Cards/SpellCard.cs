@@ -1,6 +1,7 @@
 ﻿namespace Logic.Cards
 {
     using Logic.Interfaces;
+    using Logic.Delegates;
 
     public class SpellCard : EffectCard, IFaceUpCard
     {

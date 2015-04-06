@@ -5,7 +5,7 @@
 
     public static class Effects
     {
-        // TFA SHE RABOTI WE
+        // TODO: fix those handler, add some effect, make them work l-o-l
 
         public delegate void EventHandler(ICard target, EventArgs e);
         public static event EventHandler Thrower = delegate { };

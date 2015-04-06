@@ -1,6 +1,7 @@
 ﻿namespace Logic.Cards
 {
     using Logic.Interfaces;
+    using Logic.Delegates;
 
     public class TrapCard : EffectCard, IFaceDownCard, ISpecialCard
     {

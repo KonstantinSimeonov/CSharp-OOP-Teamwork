@@ -80,7 +80,7 @@
     <Compile Include="Logic\Cards\TrapCard.cs" />
     <Compile Include="Logic\CustomEventArgs\GameOverArgs.cs" />
     <Compile Include="Logic\CustomEventArgs\PlayCardArgs.cs" />
-    <Compile Include="Logic\CustomEventArgs\TakeCardArgs.cs" />
+    <Compile Include="Logic\CustomEventArgs\DrawCardArgs.cs" />
     <Compile Include="Logic\CustomEventArgs\RemainingCardArgs.cs" />
     <Compile Include="Logic\CustomEventArgs\TargetArgs.cs" />
     <Compile Include="Logic\CustomEventArgs\TurnArguments.cs" />
@@ -104,7 +104,6 @@
     <Compile Include="Logic\Interfaces\IPublisher.cs" />
     <Compile Include="Logic\Interfaces\ISpecialCard.cs" />
     <Compile Include="Logic\Interfaces\ISubscriber.cs" />
-    <Compile Include="Logic\Interfaces\SampleType.cs" />
     <Compile Include="Logic\Menu\Menu.cs" />
     <Compile Include="Logic\Player\AI.cs" />
     <Compile Include="Logic\Player\HumanPlayer.cs" />
@@ -153,6 +152,7 @@
     <None Include="Resources\usethis1.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\face_down_monster_card.jpg" />
     <Content Include="Resources\GAMEBOARD.png" />
     <Content Include="Logic\Cards\DeckInfo.txt" />
   </ItemGroup>

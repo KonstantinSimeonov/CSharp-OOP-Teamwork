@@ -25,10 +25,9 @@
             this.Deck = deck;
         }
 
-        public void Subscribe(IFormPublisher publisher)
+        public virtual void Subscribe(IFormPublisher publisher)
         {
             publisher.DrawEvent += this.Draw;
-            publisher.RequestCardsLeft += this.ReportCardsNumber;
             publisher.PlayCardEvent += this.PlayWithArguments;
         }
 
@@ -50,24 +49,27 @@
 
         public void Draw(object sender, EventArgs e)
         {
-            var args = e as TakeCardArgs;
+            var args = e as DrawCardArgs;
             if (args == null)
                 throw new InvalidCastException("eba si makata");
 
             var drawn = deck.NextCard();
             args.PlayedCard = drawn;
+            args.CardsRemaining = this.deck.CardsRemaining;
             hand.Add(drawn);
         }
         private void PlayWithArguments(object sender, EventArgs e)
         {
             var args = e as PlayCardArgs;
             args.PlayedCard = this.Hand.Single(x => x.Path == args.Path);
-            this.PlayCard(args.PlayedCard);
+            this.PlayCard(args.PlayedCard, args.FaceUp);
         }
 
-        public void PlayCard(ICard card)
+        public void PlayCard(ICard card, bool faceUp)
         {
             var asEffectCard = card as IManaCostable;
+
+            (card as IFaceDownCard).SetDown();
 
             if(asEffectCard == null)
             {
@@ -81,16 +83,6 @@
                 this.ManaPoints -= asEffectCard.ManaCost;
                 this.Hand.Remove(card);
             }
-        }
-
-        private void ReportCardsNumber(object sender, EventArgs e)
-        {
-            var args = e as RemainingCardArgs;
-
-            if (args == null)
-                return;
-
-            args.Remaining = this.deck.CardsRemaining;
         }
     }
 }

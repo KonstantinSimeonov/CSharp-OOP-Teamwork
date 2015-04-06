@@ -16,8 +16,6 @@
 
         public int DefensePoint { get; protected set; }
 
-        public SampleType Type { get; protected set; }
-
         public bool Position { get; protected set; }
 
         public void Attack(IMonsterCard monster)
