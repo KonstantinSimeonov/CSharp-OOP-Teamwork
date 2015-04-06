@@ -1,0 +1,9 @@
+1. Implement basic AI(1-2 methods)
+2. Add AI deck to the txt file
+3. Add face-down pictures for the cards
+4. Implement support of setting down cards from the GUI
+5. Implement (de)serialization, encryption/decryption and encoding/decoding for the txt file,
+from where the cards are parsed
+6. Add some documentation
+7. Add class diagram
+8. Refactor/format/improve the existing code
