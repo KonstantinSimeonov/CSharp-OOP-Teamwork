@@ -19,6 +19,8 @@
         private void PlayTurn(object sender, EventArgs e)
         {
             // TODO: implement draw, monster summon, spellcard set, battle, end of turn
+
+
         }
     }
 }

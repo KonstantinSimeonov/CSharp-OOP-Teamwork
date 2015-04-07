@@ -2,10 +2,12 @@
 {
     using Logic.Interfaces;
     using Logic.Cards;
+    using Logic.CustomEventArgs;
+    using System;
     using System.Collections.Generic;
     using Game.CustomExeptions;
 
-    public sealed class Board : IBoard
+    public sealed class Board : IBoard, IFormSubscriber
     {
         private const string PlayerMonsterCardsCountExceptionMessageFormat = "Player can not have more than {0} monster cards on field";
         private const string PlayerEffectCardsCountExceptionMessageFormat = "Player can not have more than {0} effect cards on field";
@@ -96,6 +98,7 @@
             private set { aiGraveyard = value; }
         }
 
+<<<<<<< HEAD
         public void CheckFieldCardsValidity()
         {
             if (this.PlayersMonsters.Count > Board.MAX_MONSTERS)
@@ -117,5 +120,39 @@
                 throw new BoardCradExeption(string.Format(Board.AIEffectCardsCountExceptionMessageFormat, Board.MAX_EFFECT_CARDS));
             }
         }
+=======
+        private void AddCard(object sender, EventArgs e)
+        {
+            var args = e as PlayCardArgs;
+
+            if (args.PlayersTurn)
+            {
+                if (args.PlayedCard as IManaCostable != null)
+                {
+                    this.playerEffectCards.Add(args.PlayedCard as IManaCostable);
+                    return;
+
+                }
+
+                this.playersMonsters.Add(args.PlayedCard as IMonsterCard);
+            }
+            else
+            {
+                if (args.PlayedCard as IManaCostable != null)
+                {
+                    this.aiEffectCards.Add(args.PlayedCard as IManaCostable);
+                    return;
+
+                }
+
+                this.aiMonsters.Add(args.PlayedCard as IMonsterCard);
+            }
+        }
+
+        public void Subscribe(IFormPublisher publisher)
+        {
+            publisher.PlayCardEvent += this.AddCard;
+        }
+>>>>>>> c9d1935d1a86be37a5865b9da0bab1e469a5ef83
     }
 }
