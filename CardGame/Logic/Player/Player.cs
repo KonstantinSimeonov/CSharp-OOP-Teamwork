@@ -9,13 +9,15 @@
     using Logic.Delegates;
     
 
-    public abstract class Player : IPlayer, IFormSubscriber
+    public abstract class Player : IPlayer, IPlayerPublisher, IFormSubscriber
     {
         private const int LIFE_POINTS = 4000;
         private const int MANA_POINTS = 100;
 
         private IDeck deck;
         private IList<ICard> hand;
+
+        public event EventRaiser NotifyBoard;
 
         public Player(IDeck deck)
         {
@@ -63,6 +65,7 @@
             var args = e as PlayCardArgs;
             args.PlayedCard = this.Hand.Single(x => x.Path == args.Path);
             this.PlayCard(args.PlayedCard, args.FaceUp);
+            this.NotifyBoard(sender, e);
         }
 
         public void PlayCard(ICard card, bool faceUp)
@@ -84,5 +87,6 @@
                 this.Hand.Remove(card);
             }
         }
+
     }
 }

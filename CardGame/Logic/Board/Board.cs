@@ -6,7 +6,7 @@
     using System;
     using System.Collections.Generic;
 
-    public sealed class Board : IBoard, IFormSubscriber
+    public sealed class Board : IBoard, IPlayerSubscriber, IFormSubscriber
     {
         private const int MAX_MONSTERS = 5;
         private const int MAX_EFFECT_CARDS = 5;
@@ -22,9 +22,9 @@
 
         // Singleton
 
-        private static readonly IBoard board = new Board(); // assign at compile time
+        private static readonly Board board = new Board(); // assign at compile time
 
-        public static IBoard GameField // this property returns the only instance of the class that is creatable
+        public static Board GameField // this property returns the only instance of the class that is creatable
         {
             get { return board; }
         }
@@ -123,6 +123,11 @@
         public void Subscribe(IFormPublisher publisher)
         {
             publisher.PlayCardEvent += this.AddCard;
+        }
+
+        public void SubscribeToPlayer(IPlayerPublisher publisher)
+        {
+            publisher.NotifyBoard += this.AddCard;
         }
     }
 }

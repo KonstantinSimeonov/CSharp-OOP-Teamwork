@@ -22,6 +22,8 @@
         private PictureBox[] pHandC;
         private PictureBox[] pSpellC;
         private PictureBox[] pFieldC;
+        private PictureBox[] aiMonsters;
+        private PictureBox[] aiSpells;
 
         public CardGame()
         {
@@ -29,8 +31,10 @@
             pHandC = new PictureBox[] { PCard1, PCard2, PCard3, PCard4, PCard5, PCard6, PCard7, PCard8 };
             pSpellC = new PictureBox[] { PlayerSpell1, PlayerSpell2, PlayerSpell3, PlayerSpell4, PlayerSpell5 };
             pFieldC = new PictureBox[] { PlayerMonster1, PlayerMonster2c, PlayerMonster3, PlayerMonster4, PlayerMonster5 };
+            aiMonsters = new PictureBox[] { CompMonster1, CompMonster2, CompMonster3, CompMonster4, CompMonster5 };
+            aiSpells = new PictureBox[] { CompSpell1, CompSpell2, CompSpell3, CompSpell4, CompSpell5 };
             this.firstDraw = false;
-            
+
         }
 
         private void Draw(int cards)
@@ -227,7 +231,8 @@
         private void button5_Click(object sender, EventArgs e)
         {
             this.DisablePlayerUI();
-            this.End(sender, e);
+            var args = new PlayCardArgs(null, null, true, false);
+            this.End(sender, args);
         }
 
         private void PlayerMonster2c_Click(object sender, EventArgs e)
@@ -255,28 +260,28 @@
 
         public event EventRaiser GameOver;
 
-        private PictureBox[] GetField(ICard card)
+        private PictureBox[] GetField(ICard card, bool playerTurn = true)
         {
             switch (card.Type)
             {
                 case CardTypes.Spell:
-                    return this.pSpellC;
+                    return playerTurn ? this.pSpellC : this.aiSpells;
                 case CardTypes.Equip:
-                    return this.pSpellC;
+                    return playerTurn ? this.pSpellC : this.aiSpells;
                 case CardTypes.Field:
-                    return this.pSpellC;
+                    return playerTurn ? this.pSpellC : this.aiSpells;
                 case CardTypes.Trap:
-                    return this.pSpellC;
+                    return playerTurn ? this.pSpellC : this.aiSpells;
                 case CardTypes.Monster:
-                    return this.pFieldC;
+                    return playerTurn ? this.pFieldC : this.aiMonsters;
                 case CardTypes.SpecialMonster:
-                    return this.pFieldC;
+                    return playerTurn ? this.pFieldC : this.aiMonsters;
                 default:
                     throw new NotImplementedException("em kot takoa");
             }
         }
 
-        
+
 
         private void RaisePlay(object sender, EventArgs e)
         {

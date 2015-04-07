@@ -41,12 +41,14 @@
             var fack = Factory.Instance;
             var form = new CardGame();
             var PlayerDeck = fack.AssembleDeck();
-            IBoard board = Board.GameField;
+            Board board = Board.GameField;
             var player = new HumanPlayer(PlayerDeck);
             var AIDeck = fack.AssembleDeck();
             var AI = new AI(AIDeck);
             player.Subscribe(form);
             AI.Subscribe(form);
+            board.SubscribeToPlayer(player);
+            board.SubscribeToPlayer(AI);
             this.Subscribe(form);
             Application.Run(form);
         }

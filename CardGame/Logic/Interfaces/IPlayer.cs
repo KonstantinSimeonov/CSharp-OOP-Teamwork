@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using Logic.Delegates;
 
    public interface IPlayer
     {
@@ -11,5 +12,6 @@
         IDeck Deck { get; }
         void Draw(object sender, EventArgs e); // the player can draw cards
         void PlayCard(ICard card, bool faceUp); // the player can play cards
+        event EventRaiser NotifyBoard;
     }
 }
