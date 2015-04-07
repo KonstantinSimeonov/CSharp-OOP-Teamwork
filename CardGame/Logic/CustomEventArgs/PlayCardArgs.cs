@@ -2,6 +2,7 @@
 {
     using System;
     using Logic.Interfaces;
+    using System.Collections.Generic;
     class PlayCardArgs : DrawCardArgs
     {
         public string Path { get; set; }

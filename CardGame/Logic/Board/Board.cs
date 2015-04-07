@@ -3,9 +3,15 @@
     using Logic.Interfaces;
     using Logic.Cards;
     using System.Collections.Generic;
+    using Game.CustomExeptions;
 
     public sealed class Board : IBoard
     {
+        private const string PlayerMonsterCardsCountExceptionMessageFormat = "Player can not have more than {0} monster cards on field";
+        private const string PlayerEffectCardsCountExceptionMessageFormat = "Player can not have more than {0} effect cards on field";
+        private const string AIMonsterCardsCountExceptionMessageFormat = "AI can not have more than {0} monster cards on field";
+        private const string AIEffectCardsCountExceptionMessageFormat = "AI can not have more than {0} effect cards on field";
+
         private const int MAX_MONSTERS = 5;
         private const int MAX_EFFECT_CARDS = 5;
 
@@ -39,7 +45,7 @@
 
             PlayerDeck = new Deck();
             AIDeck = new Deck();
-            
+
         }
 
         public IList<IMonsterCard> PlayersMonsters
@@ -88,6 +94,28 @@
         {
             get { return new List<ICard>(aiGraveyard); }
             private set { aiGraveyard = value; }
+        }
+
+        public void CheckFieldCardsValidity()
+        {
+            if (this.PlayersMonsters.Count > Board.MAX_MONSTERS)
+            {
+                throw new BoardCradExeption(string.Format(Board.PlayerMonsterCardsCountExceptionMessageFormat, Board.MAX_MONSTERS));
+            }
+
+            if (this.PlayerEffectCards.Count > Board.MAX_EFFECT_CARDS)
+            {
+                throw new BoardCradExeption(string.Format(Board.PlayerEffectCardsCountExceptionMessageFormat, Board.MAX_EFFECT_CARDS));
+            }
+
+            if (this.AIMonsters.Count > Board.MAX_MONSTERS)
+            {
+                throw new BoardCradExeption(string.Format(Board.AIMonsterCardsCountExceptionMessageFormat, Board.MAX_MONSTERS));
+            }
+            if (this.AIEffectCards.Count > Board.MAX_EFFECT_CARDS)
+            {
+                throw new BoardCradExeption(string.Format(Board.AIEffectCardsCountExceptionMessageFormat, Board.MAX_EFFECT_CARDS));
+            }
         }
     }
 }

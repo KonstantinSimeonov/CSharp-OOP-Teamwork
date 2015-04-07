@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomExeptions\BoardCradExeption.cs" />
     <Compile Include="Engine\Phases.cs" />
     <Compile Include="GameUI.cs">
       <SubType>Form</SubType>
