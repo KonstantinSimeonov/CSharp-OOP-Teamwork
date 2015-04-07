@@ -13,6 +13,7 @@
     using Logic.CustomEventArgs;
     using Logic.Interfaces;
     using Logic.Delegates;
+    using Logic.Cards;
 
     public partial class CardGame : Form, IFormPublisher
     {
@@ -258,17 +259,17 @@
         {
             switch (card.Type)
             {
-                case Logic.Cards.CardTypes.Spell:
+                case CardTypes.Spell:
                     return this.pSpellC;
-                case Logic.Cards.CardTypes.Equip:
+                case CardTypes.Equip:
                     return this.pSpellC;
-                case Logic.Cards.CardTypes.Field:
+                case CardTypes.Field:
                     return this.pSpellC;
-                case Logic.Cards.CardTypes.Trap:
+                case CardTypes.Trap:
                     return this.pSpellC;
-                case Logic.Cards.CardTypes.Monster:
+                case CardTypes.Monster:
                     return this.pFieldC;
-                case Logic.Cards.CardTypes.SpecialMonster:
+                case CardTypes.SpecialMonster:
                     return this.pFieldC;
                 default:
                     throw new NotImplementedException("em kot takoa");

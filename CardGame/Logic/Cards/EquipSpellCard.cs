@@ -2,6 +2,7 @@
 {
     using Logic.Interfaces;
     using Logic.Delegates;
+    using System.Collections.Generic;
 
     public class EquipSpellCard : SpellCard, IEquipCard
     {
@@ -32,7 +33,7 @@
             throw new System.NotImplementedException();
         }
 
-        public override System.Collections.Generic.IList<ICard> Parse(string path)
+        public override IList<ICard> Parse(string path)
         {
             throw new System.NotImplementedException();
         }
