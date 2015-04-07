@@ -2,9 +2,11 @@
 {
     using Logic.Interfaces;
     using Logic.Cards;
+    using Logic.CustomEventArgs;
+    using System;
     using System.Collections.Generic;
 
-    public sealed class Board : IBoard
+    public sealed class Board : IBoard, IFormSubscriber
     {
         private const int MAX_MONSTERS = 5;
         private const int MAX_EFFECT_CARDS = 5;
@@ -88,6 +90,39 @@
         {
             get { return new List<ICard>(aiGraveyard); }
             private set { aiGraveyard = value; }
+        }
+
+        private void AddCard(object sender, EventArgs e)
+        {
+            var args = e as PlayCardArgs;
+
+            if (args.PlayersTurn)
+            {
+                if (args.PlayedCard as IManaCostable != null)
+                {
+                    this.playerEffectCards.Add(args.PlayedCard as IManaCostable);
+                    return;
+
+                }
+
+                this.playersMonsters.Add(args.PlayedCard as IMonsterCard);
+            }
+            else
+            {
+                if (args.PlayedCard as IManaCostable != null)
+                {
+                    this.aiEffectCards.Add(args.PlayedCard as IManaCostable);
+                    return;
+
+                }
+
+                this.aiMonsters.Add(args.PlayedCard as IMonsterCard);
+            }
+        }
+
+        public void Subscribe(IFormPublisher publisher)
+        {
+            publisher.PlayCardEvent += this.AddCard;
         }
     }
 }

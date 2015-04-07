@@ -8,11 +8,14 @@
 
         public bool FaceUp { get; set; }
 
-        public PlayCardArgs(ICard card, string path, bool faceUp)
+        public bool PlayersTurn { get; set; }
+
+        public PlayCardArgs(ICard card, string path, bool faceUp, bool turn)
             :base(card)
         {
             this.Path = path;
             this.FaceUp = faceUp;
+            this.PlayersTurn = turn;
         }
     }
 }

@@ -40,10 +40,13 @@
             Application.SetCompatibleTextRenderingDefault(false);
             var fack = Factory.Instance;
             var form = new CardGame();
-            var GameDeck = fack.AssembleDeck();
+            var PlayerDeck = fack.AssembleDeck();
             IBoard board = Board.GameField;
-            var player = new HumanPlayer(GameDeck);
+            var player = new HumanPlayer(PlayerDeck);
+            var AIDeck = fack.AssembleDeck();
+            var AI = new AI(AIDeck);
             player.Subscribe(form);
+            AI.Subscribe(form);
             this.Subscribe(form);
             Application.Run(form);
         }

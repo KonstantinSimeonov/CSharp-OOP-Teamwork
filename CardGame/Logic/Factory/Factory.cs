@@ -58,6 +58,8 @@
                     return new MonsterCard(cardCommand[1], cardCommand[2], cardCommand[3], int.Parse(cardCommand[4]), int.Parse(cardCommand[5]));
                 case Factory.SPECIAL_MONSTER_CARD:
                     return new SpecialMonster(cardCommand[1], cardCommand[2], cardCommand[3], int.Parse(cardCommand[4]), int.Parse(cardCommand[5]), Effects.NoEffect);
+                case Factory.TRAP_CARD:
+                    return new TrapCard(cardCommand[1], cardCommand[2], cardCommand[3], Effects.NoEffect, Effects.NoEffect);
                 case Factory.SPELL_CARD:
                     return new SpellCard(cardCommand[1], cardCommand[2], cardCommand[3], Effects.NoEffect, Effects.NoEffect);
                 case Factory.EQUIP_CARD:
@@ -74,7 +76,7 @@
             {
                 deck.Cards.Add(this.CreateCard());
             }
-
+            this.currentLine = 0;
             return deck;
         }
 

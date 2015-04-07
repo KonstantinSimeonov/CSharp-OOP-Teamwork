@@ -7,6 +7,7 @@
     using System.Drawing;
     using System.Linq;
     using System.Text;
+    using System.Threading;
     using System.Threading.Tasks;
     using System.Windows.Forms;
     using Logic.CustomEventArgs;
@@ -15,6 +16,7 @@
 
     public partial class CardGame : Form, IFormPublisher
     {
+        private bool firstDraw;
 
         private PictureBox[] pHandC;
         private PictureBox[] pSpellC;
@@ -26,9 +28,17 @@
             pHandC = new PictureBox[] { PCard1, PCard2, PCard3, PCard4, PCard5, PCard6, PCard7, PCard8 };
             pSpellC = new PictureBox[] { PlayerSpell1, PlayerSpell2, PlayerSpell3, PlayerSpell4, PlayerSpell5 };
             pFieldC = new PictureBox[] { PlayerMonster1, PlayerMonster2c, PlayerMonster3, PlayerMonster4, PlayerMonster5 };
+            this.firstDraw = false;
+            
         }
 
-
+        private void Draw(int cards)
+        {
+            for (int i = 0; i < cards; i++)
+            {
+                this.GameDraw(this, new EventArgs());
+            }
+        }
 
         private PictureBox GetFirstEmpty(PictureBox[] boxes)
         {
@@ -165,24 +175,12 @@
 
         }
 
-        private void PlayOnTheField(PictureBox current, PictureBox[] boxes, bool faceUp)
-        {
-            if (current.Image != null)
-            {
-                var box = this.GetFirstEmpty(boxes);
-
-                // TODO: implement another picture for face-down effect cards
-
-                box.Image = faceUp ? current.Image : Image.FromFile(@"..\..\Resources\DeckImgCurrent\face_down_monster_card.jpg");
-                current.Image = null;
-            }
-        }
 
         private void GameDraw(object sender, EventArgs e)
         {
             var args = new DrawCardArgs(null);
             this.DrawEvent(sender, args);
-            this.AssignPicture(args.PlayedCard, pHandC);
+            this.AssignPicture(args.PlayedCard, pHandC, true);
             PlayerCardsInDeck.Text = args.CardsRemaining.ToString();
         }
 
@@ -214,6 +212,13 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!firstDraw)
+            {
+                this.Draw(5);
+                this.firstDraw = true;
+                return;
+            }
+
             this.GameDraw(sender, e);
             this.DrawButton.Enabled = false;
         }
@@ -277,23 +282,22 @@
             // TODO: delete this metod
 
             var box = sender as PictureBox;
-            var args = new PlayCardArgs(null, box.Image.Tag.ToString(), true);
+            var args = new PlayCardArgs(null, box.Image.Tag.ToString(), true, this.EndTurnButton.Enabled);
             this.PlayCardEvent(sender, args);
 
             if (args == null)
                 throw new NullReferenceException("Played card cannot be null");
-
-            this.PlayOnTheField(box, this.GetField(args.PlayedCard), true);
+            this.AssignPicture(args.PlayedCard, this.GetField(args.PlayedCard), args.FaceUp);
         }
 
 
-        private void AssignPicture(ICard card, PictureBox[] boxes)
+        private void AssignPicture(ICard card, PictureBox[] boxes, bool faceUp)
         {
             var box = this.GetFirstEmpty(boxes);
-            box.Image = SmallCards.Images[int.Parse(card.Path)];
+            box.Image = !faceUp ? Image.FromFile(@"..\..\Resources\DeckImgCurrent\face_down_monster_card.jpg") : SmallCards.Images[int.Parse(card.Path)];
             box.Image.Tag = card.Path;
         }
-
+        //box.Image = faceUp ? current.Image : Image.FromFile(@"..\..\Resources\DeckImgCurrent\face_down_monster_card.jpg");
         private void PlayerCardsInDeck_Click(object sender, EventArgs e)
         {
 
@@ -340,13 +344,20 @@
             bool left = e.Button == MouseButtons.Left;
 
             var box = sender as PictureBox;
-            var args = new PlayCardArgs(null, box.Image.Tag.ToString(), left);
+            var args = new PlayCardArgs(null, box.Image.Tag.ToString(), left, this.EndTurnButton.Enabled);
             this.PlayCardEvent(sender, args);
 
             if (args == null)
                 throw new NullReferenceException("Played card cannot be null");
 
-            this.PlayOnTheField(box, this.GetField(args.PlayedCard), left);
+            box.Image = null;
+
+            this.AssignPicture(args.PlayedCard, this.GetField(args.PlayedCard), left);
+
+        }
+
+        private void PCard1_Click_1(object sender, EventArgs e)
+        {
 
         }
     }
