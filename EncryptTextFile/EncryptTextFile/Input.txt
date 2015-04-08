@@ -1,7 +1,0 @@
-﻿THis is test method
-for
-encrypting and decrypring
-information
-using 
-Rijndael algorithm
-.
