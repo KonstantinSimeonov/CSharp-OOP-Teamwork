@@ -24,9 +24,15 @@
         private PictureBox[] aiSpells;
         private Button[] buttons;
         private bool uiEnabled;
-        private bool battleSelectFriendly;
-        private bool battleSelectEnemy;
-        private string IdAttacker, IdDefender;
+
+        struct BattleArgsParams
+        {
+            public bool battleSelectFriendly;
+            public bool battleSelectEnemy;
+            public string IdAttacker, IdDefender;
+        }
+
+        private BattleArgsParams battleParams;
 
         public CardGame()
         {
@@ -40,24 +46,15 @@
             this.uiEnabled = true;
         }
 
-        private PictureBox GetFirstEmpty(PictureBox[] boxes)
-        {
-            return boxes.Where(x => x.Image == null).First();
-        }
 
-        private void SetZoom(object sender, EventArgs e)
-        {
-            var box = sender as PictureBox;
 
-            if (box.Image == null)
-                return;
-
-            int index = int.Parse(box.Image.Tag.ToString());
-            this.ZoomMonsterCard.ImageLocation = string.Format(@"../../Resources/DeckImgCurrent/BigCards/{0}.jpg", index);
-        }
-
-        #region WTF
+        #region ToDelete
         private void CardGame_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PCard1_Click_1(object sender, EventArgs e)
         {
 
         }
@@ -156,38 +153,6 @@
 
         }
 
-        private void SelectFriendly(object sender, EventArgs e)
-        {
-            if (this.battleSelectFriendly)
-            {
-                this.IdAttacker = (sender as PictureBox).Image.Tag.ToString();
-                this.battleSelectFriendly = false;
-                this.battleSelectEnemy = true;
-                this.SetClicking(this.pFieldC, false);
-                this.SetClicking(this.pSpellC, false);
-                this.SetClicking(this.aiMonsters, true);
-            }
-        }
-
-        private void SelectEnemy(object sender, EventArgs e)
-        {
-            if (this.battleSelectEnemy)
-            {
-                this.IdDefender = (sender as PictureBox).Image.Tag.ToString();
-                this.battleSelectEnemy = false;
-                this.SetClicking(this.aiMonsters, false);
-                var args = new BoardReportArgs(true, true, true, bArgs: new BattleArgs(this.IdAttacker, this.IdDefender));
-                this.Battle(sender, args);
-                this.UpdateUI(args);
-                this.IdAttacker = this.IdDefender = null;
-                if (this.pFieldC.Where(x => x.Image != null).Any())
-                    this.BattleButton_Click(this.BattleButton, e);
-            }
-        }
-
-        #endregion
-
-        #region WTF
         private void PDeck_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
@@ -215,11 +180,72 @@
 
         #endregion
 
-        /// <summary>
-        /// Raises an event to which the board subscribes.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        #region Events
+        // TODO: implement the remaining events
+
+        public event EventRaiser DrawEvent;
+
+        public event EventRaiser PlayCardEvent;
+
+        public event EventRaiser Main1;
+
+        public event EventRaiser Battle;
+
+        public event EventRaiser Main2;
+
+        public event EventRaiser End;
+
+        public event EventRaiser GameOver;
+
+        #endregion
+
+        #region Methods
+
+        private PictureBox GetFirstEmpty(PictureBox[] boxes)
+        {
+            return boxes.Where(x => x.Image == null).First();
+        }
+
+        private void SetZoom(object sender, EventArgs e)
+        {
+            var box = sender as PictureBox;
+
+            if (box.Image == null)
+                return;
+
+            int index = int.Parse(box.Image.Tag.ToString());
+            this.ZoomMonsterCard.ImageLocation = string.Format(@"../../Resources/DeckImgCurrent/BigCards/{0}.jpg", index);
+        }
+
+        private void SelectFriendly(object sender, EventArgs e)
+        {
+            if (this.battleParams.battleSelectFriendly)
+            {
+                this.battleParams.IdAttacker = (sender as PictureBox).Image.Tag.ToString();
+                this.battleParams.battleSelectFriendly = false;
+                this.battleParams.battleSelectEnemy = true;
+                this.SetClicking(this.pFieldC, false);
+                this.SetClicking(this.pSpellC, false);
+                this.SetClicking(this.aiMonsters, true);
+            }
+        }
+
+        private void SelectEnemy(object sender, EventArgs e)
+        {
+            if (this.battleParams.battleSelectEnemy)
+            {
+                this.battleParams.IdDefender = (sender as PictureBox).Image.Tag.ToString();
+                this.battleParams.battleSelectEnemy = false;
+                this.SetClicking(this.aiMonsters, false);
+                var args = new BoardReportArgs(true, true, true, bArgs: new BattleArgs(this.battleParams.IdAttacker, this.battleParams.IdDefender));
+                this.Battle(sender, args);
+                this.UpdateUI(args);
+                this.battleParams.IdAttacker = this.battleParams.IdDefender = null;
+                if (this.pFieldC.Where(x => x.Image != null).Any())
+                    this.BattleButton_Click(this.BattleButton, e);
+            }
+        }
+
         private void DrawButton_Click(object sender, EventArgs e)
         {
             var args = new BoardReportArgs(true, true, true);
@@ -270,31 +296,6 @@
             this.TogglePlayerUI();
         }
 
-        #region Events
-        // TODO: implement the remaining events
-
-        public event EventRaiser DrawEvent;
-
-        public event EventRaiser PlayCardEvent;
-
-        public event EventRaiser Main1;
-
-        public event EventRaiser Battle;
-
-        public event EventRaiser Main2;
-
-        public event EventRaiser End;
-
-        public event EventRaiser GameOver;
-
-        #endregion
-
-        private void PlayerCardsInDeck_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void TogglePlayerUI()
         {
             this.uiEnabled = !this.uiEnabled;
@@ -320,7 +321,7 @@
             this.Phase1Button.Enabled = false;
             this.SetClicking(this.pFieldC, true);
             this.SetClicking(this.pSpellC, true);
-            this.battleSelectFriendly = true;
+            this.battleParams.battleSelectFriendly = true;
 
         }
 
@@ -362,24 +363,11 @@
             this.SetClicking(this.pHandC, false);
         }
 
-        private void PCard1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private Image FaceDown()
         {
             return Image.FromFile(@"..\..\Resources\DeckImgCurrent\face_down_monster_card.jpg");
         }
 
-        private void SelectFriendly(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void SelectEnemy(object sender, MouseEventArgs e)
-        {
-
-        }
+        #endregion
     }
 }

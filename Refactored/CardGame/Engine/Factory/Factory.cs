@@ -2,18 +2,16 @@
 {
     using System;
     using System.IO;
+    using System.Drawing;
+
+    using Engine.CustomExceptions;
     using Logic.Interfaces;
     using Logic.Cards;
     using Logic.Player;
-    using System.Reflection;
-    using System.Runtime.Serialization.Formatters.Binary;
-    using System.Drawing;
+    
 
     public class Factory : IFactory
     {
-        // TODO: implement serializing, encryption and encoding of the deck cards
-
-
         #region Constants
         private const char SPLIT = ',';
         private const char NEWLINE = '\n';
@@ -29,7 +27,7 @@
 
         private const string PATH = @"..\..\CardInfo\CardInfo.cinf";
         #endregion
-
+        
         private static readonly IFactory factory = new Factory();
 
         private bool aiCreated, humanPlayerCreated;
@@ -92,10 +90,9 @@
                 //case CardTypes.Equip:
                 //    return new EquipSpellCard(cardName, cardDescription, cardPath, Effects.NoEffect, Effects.NoEffect, 0, 0);
 
-
-                default:
+                default: throw new InvalidParseException(this.deckInfo[this.currentLine - 1]);
                     // THROW CUSTOM EXCEPTION HERE
-                    throw new ArgumentException(Factory.INVALID_ARG);
+                    
             }
         }
 

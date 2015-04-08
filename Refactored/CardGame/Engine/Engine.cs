@@ -8,24 +8,22 @@
     using System.Threading.Tasks;
     using System.Windows.Forms;
 
-    public class Engine : IEngine
+    public class GameEngine : IEngine
     {
 
-        private static readonly Engine gameEngine = new Engine();
+        private static readonly GameEngine gameEngine = new GameEngine();
 
-        public static Engine Instance
+        public static GameEngine Instance
         {
             get { return gameEngine; }
         }
 
-        private Engine()
+        private GameEngine()
         {  }
 
         [STAThread]
         public void Run()
         {
-            // TODO: refactoring
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             var form = new CardGame();

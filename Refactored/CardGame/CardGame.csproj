@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engine\CustomExceptions\BoardCardNumberException.cs" />
+    <Compile Include="Engine\CustomExceptions\InvalidParseException.cs" />
     <Compile Include="Engine\Delegates\EffectDelegates.cs" />
     <Compile Include="Engine\Factory\FactorySourceSecurity.cs" />
     <Compile Include="Engine\Phases.cs" />
@@ -116,6 +117,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -152,7 +154,6 @@
   <ItemGroup>
     <Content Include="Resources\face_down_monster_card.jpg" />
     <Content Include="Resources\GAMEBOARD.png" />
-    <Content Include="Logic\Cards\DeckInfo.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

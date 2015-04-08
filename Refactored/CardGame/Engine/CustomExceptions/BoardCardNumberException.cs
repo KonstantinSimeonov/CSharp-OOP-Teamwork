@@ -1,7 +1,7 @@
 ﻿namespace Engine.CustomExceptions
 {
     using System;
-    class BoardCardNumberException : Exception
+    public class BoardCardNumberException : Exception
     {
         private const string ERROR_MESSAGE = "This section of the board({0}) cannot contain more than 5 cards!";
 

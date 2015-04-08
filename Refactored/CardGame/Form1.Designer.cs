@@ -623,7 +623,6 @@
             this.PlayerCardsInDeck.Size = new System.Drawing.Size(46, 13);
             this.PlayerCardsInDeck.TabIndex = 48;
             this.PlayerCardsInDeck.Text = "             ";
-            this.PlayerCardsInDeck.Click += new System.EventHandler(this.PlayerCardsInDeck_Click);
             // 
             // aiLife
             // 

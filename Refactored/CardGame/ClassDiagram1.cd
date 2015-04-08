@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Engine.CustomEventArgs.BattleArgs" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAACAAAAAAAAEAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Engine\CustomEventArgs\BattleArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine.CustomEventArgs.BoardReportArgs" Collapsed="true">
+    <Position X="19.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARACQCAQIEAAAAAAAAIACAAAAAAABgAAAAAACQAABAA=</HashCode>
+      <FileName>Engine\CustomEventArgs\BoardReportArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine.CustomEventArgs.GameOverArgs" Collapsed="true">
+    <Position X="17.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\CustomEventArgs\GameOverArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine.CustomExceptions.BoardCardNumberException" Collapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\CustomExceptions\BoardCardNumberException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine.Engine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAQAAAAAAAAAI=</HashCode>
+      <FileName>Engine\Engine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Engine.Factory.Factory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgWBAAAgkAAAAAQgAIAAAAJAAAAEQAQgUAAAQBA=</HashCode>
+      <FileName>Engine\Factory\Factory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Engine.Factory.FactorySourceSecurity" Collapsed="true">
+    <Position X="15.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAQAAAAAAAAAAEAAEAAAAADAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Factory\FactorySourceSecurity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine.Factory.SerializableString" Collapsed="true">
+    <Position X="15.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Factory\FactorySourceSecurity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game.CardGame" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IRtQsRAgBKECkOAkqkSAWASCAgwErhOvAQAMUKJQQAE=</HashCode>
+      <FileName>GameUI.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Game.Program" Collapsed="true">
+    <Position X="19.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logic.Board.Board" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACIAABAACAAhIAAAAQAICAEgACQAQQYAAEARACAgg=</HashCode>
+      <FileName>Logic\Board\Board.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Logic.Cards.Card" Collapsed="true">
+    <Position X="3.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAgAAIAgAAAAAUAAAAAAAAAAQAAAAAIAAA=</HashCode>
+      <FileName>Logic\Cards\Card.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Logic.Cards.Deck" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAIAIAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Cards\Deck.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Logic.Cards.EffectCard" Collapsed="true">
+    <Position X="5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAABAAAAAAAAAAAAAAAAACAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Logic\Cards\EffectCard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Logic.Cards.Effects" Collapsed="true">
+    <Position X="17.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAEAAAAAAAAABAAAhAAAAAAAAAAAAABAI=</HashCode>
+      <FileName>Logic\Cards\Effects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logic.Cards.EquipSpellCard" Collapsed="true">
+    <Position X="5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAACAAAAACAAAAAQAAAAA=</HashCode>
+      <FileName>Logic\Cards\EquipSpellCard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Logic.Cards.FieldSpellCard" Collapsed="true">
+    <Position X="2.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Cards\FieldSpellCard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logic.Cards.MonsterCard" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAggAAEAAAAAAIAAAAACAIAAAQAAAAA=</HashCode>
+      <FileName>Logic\Cards\MonsterCard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Logic.Cards.SpecialMonster" Collapsed="true">
+    <Position X="0.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Cards\SpecialMonster.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Logic.Cards.SpellCard" Collapsed="true">
+    <Position X="3.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Cards\SpellCard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Logic.Cards.TrapCard" Collapsed="true">
+    <Position X="7.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Cards\TrapCard.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Logic.Player.AI" Collapsed="true">
+    <Position X="9.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Player\AI.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Logic.Player.HumanPlayer" Collapsed="true">
+    <Position X="11.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Player\HumanPlayer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Logic.Player.Player" Collapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASAAAiQgAAAAEAAAAAAAANAAAABAEAAAAAA=</HashCode>
+      <FileName>Logic\Player\Player.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Game.Properties.Resources" Collapsed="true">
+    <Position X="14" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAEAAAAAAEAABEAAgAQEAAAAAAAAAAAAAAIg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game.Properties.Settings" Collapsed="true">
+    <Position X="17.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Logic.Interfaces.IArtificialIntelligence" Collapsed="true">
+    <Position X="11.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Interfaces\IArtificialIntelligence.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.Interfaces.IBoard" Collapsed="true">
+    <Position X="14" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAAAAAAAAAgIAAAAQAACAAAAAAAQAAAAAAQAAAAA=</HashCode>
+      <FileName>Logic\Interfaces\IBoard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.Interfaces.ICard" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAIAAAAAAAQAAAAAAAAAAQAAAAAIAAA=</HashCode>
+      <FileName>Logic\Interfaces\ICard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.Interfaces.IDeck" Collapsed="true">
+    <Position X="15.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAIAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Interfaces\IDeck.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.Interfaces.IEngine" Collapsed="true">
+    <Position X="17.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Logic\Interfaces\IEngine.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.Interfaces.IEquipCard" Collapsed="true">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Interfaces\IEquipCard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.Interfaces.IFaceDownCard" Collapsed="true">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAgAAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Interfaces\IFaceDownCard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.Interfaces.IFaceUpCard" Collapsed="true">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Interfaces\IFaceUpCard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.Interfaces.IFactory" Collapsed="true">
+    <Position X="19.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Logic\Interfaces\IFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.Interfaces.IFormPublisher" Collapsed="true">
+    <Position X="14" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAgAAgAAAAAAAAAgAACAAAAAAAgAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Logic\Interfaces\IFormPublisher.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.Interfaces.IHumanPlayer" Collapsed="true">
+    <Position X="9.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Interfaces\IHumanPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.Interfaces.IManaCostable" Collapsed="true">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Logic\Interfaces\IManaCostable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.Interfaces.IMonsterCard" Collapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAgAAEAAAAAAIAAAAACAIAAAQAAAAA=</HashCode>
+      <FileName>Logic\Interfaces\IMonsterCard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.Interfaces.IPlayer" Collapsed="true">
+    <Position X="10.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASAAAiQAAAAAAAAAAAAAABAAAABAEAAAAAA=</HashCode>
+      <FileName>Logic\Interfaces\IPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.Interfaces.ISpecialCard" Collapsed="true">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Interfaces\ISpecialCard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Logic.Interfaces.IFormSubscriber" Collapsed="true">
+    <Position X="15.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Interfaces\ISubscriber.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Engine.Phases" Collapsed="true">
+    <Position X="15.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAACAAAAAAAgAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Engine\Phases.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Logic.Cards.CardTypes" Collapsed="true">
+    <Position X="14" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEEAAAAAAAAAAAAAAAAAAAIAgAgAAAAAAgAA=</HashCode>
+      <FileName>Logic\Cards\CardTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="Engine.Delegates.Effect" Collapsed="true">
+    <Position X="14" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Delegates\EffectDelegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Engine.Delegates.ParametricEffect" Collapsed="true">
+    <Position X="17.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Delegates\EffectDelegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Engine.Delegates.EventRaiser" Collapsed="true">
+    <Position X="15.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Delegates\EventDelegates.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

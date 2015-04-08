@@ -17,8 +17,8 @@
         public FactorySourceSecurity()
         {
             this.SecuredContent = new SerializableString();
-            this.unsecured = File.ReadAllText(sourcePath);
-            this.Serialize();
+            //this.unsecured = File.ReadAllText(sourcePath);
+            //this.Serialize();
         }
 
         private void Serialize()
@@ -46,7 +46,7 @@
         {
             var encrypted = new StringBuilder(str);
 
-            for (int i = 0; i < this.unsecured.Length; i++)
+            for (int i = 0; i < str.Length; i++)
             {
                 encrypted[i] ^= FactorySourceSecurity.key[i % FactorySourceSecurity.key.Length];
             }

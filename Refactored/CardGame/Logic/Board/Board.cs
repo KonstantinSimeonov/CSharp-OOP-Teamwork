@@ -11,7 +11,7 @@
     using Engine.CustomExceptions;
     using System.Linq;
 
-    public sealed class Board : IBoard, IFormSubscriber
+    public class Board : IBoard, IFormSubscriber
     {
         private const int MAX_MONSTERS = 5;
         private const int MAX_EFFECT_CARDS = 5;

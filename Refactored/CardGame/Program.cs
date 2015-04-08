@@ -6,7 +6,7 @@
     {
         static void Main()
         {
-            Engine.Instance.Run();
+            GameEngine.Instance.Run();
         }
     }
 }
