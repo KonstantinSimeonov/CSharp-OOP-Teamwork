@@ -1,0 +1,8 @@
+Monster,Blademaster,Top rezachka,0,1000,2000
+Monster,Time-Wizard,Flip a coin. If you guess - destroy all of the opponents monsters. If not - destroys your own.,1,500,500,0
+Monster,Psychic Kappa,Jaba ili ptica?,2,400,1000
+Monster,Quillbolt Hedgehog,Katerica s boltcheta,3,800,800
+Monster,Rampaging Rhino,Damage is inflicted to opponent from attacks to monsters in defense position as well.,4,1500,300,1
+Monster,Blue-Eyes White Dragon, Drakonche ^.^,5,3000,3000
+Trap,Magic Cylinder,Reflects one attack to the opponents life points,6,2,2
+Spell,Fissure,Destroys the opponents monster with the lowest attack.,8,2,2

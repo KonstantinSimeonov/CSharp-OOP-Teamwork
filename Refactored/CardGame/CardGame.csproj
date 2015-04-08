@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CA976FB3-EBD4-424D-95F9-367A6BF6E268}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Game</RootNamespace>
+    <AssemblyName>CardGame</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Engine\CustomExceptions\BoardCardNumberException.cs" />
+    <Compile Include="Engine\Delegates\EffectDelegates.cs" />
+    <Compile Include="Engine\Factory\FactorySourceSecurity.cs" />
+    <Compile Include="Engine\Phases.cs" />
+    <Compile Include="GameUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>GameUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\Board\Board.cs" />
+    <Compile Include="Logic\Cards\Card.cs" />
+    <Compile Include="Logic\Cards\CardTypes.cs" />
+    <Compile Include="Logic\Cards\Deck.cs" />
+    <Compile Include="Logic\Cards\EffectCard.cs" />
+    <Compile Include="Logic\Cards\Effects.cs" />
+    <Compile Include="Logic\Cards\EquipSpellCard.cs" />
+    <Compile Include="Logic\Cards\FieldSpellCard.cs" />
+    <Compile Include="Logic\Cards\MonsterCard.cs" />
+    <Compile Include="Logic\Cards\SpecialMonster.cs" />
+    <Compile Include="Logic\Cards\SpellCard.cs" />
+    <Compile Include="Logic\Cards\TrapCard.cs" />
+    <Compile Include="Engine\CustomEventArgs\BoardReportArgs.cs" />
+    <Compile Include="Engine\CustomEventArgs\GameOverArgs.cs" />
+    <Compile Include="Engine\CustomEventArgs\BattleArgs.cs" />
+    <Compile Include="Engine\Delegates\EventDelegates.cs" />
+    <Compile Include="Engine\Engine.cs" />
+    <Compile Include="Engine\Factory\Factory.cs" />
+    <Compile Include="Logic\Interfaces\IArtificialIntelligence.cs" />
+    <Compile Include="Logic\Interfaces\IBoard.cs" />
+    <Compile Include="Logic\Interfaces\ICard.cs" />
+    <Compile Include="Logic\Interfaces\IDeck.cs" />
+    <Compile Include="Logic\Interfaces\IEngine.cs" />
+    <Compile Include="Logic\Interfaces\IEquipCard.cs" />
+    <Compile Include="Logic\Interfaces\IFaceDownCard.cs" />
+    <Compile Include="Logic\Interfaces\IFaceUpCard.cs" />
+    <Compile Include="Logic\Interfaces\IFactory.cs" />
+    <Compile Include="Logic\Interfaces\IHumanPlayer.cs" />
+    <Compile Include="Logic\Interfaces\IManaCostable.cs" />
+    <Compile Include="Logic\Interfaces\IMonsterCard.cs" />
+    <Compile Include="Logic\Interfaces\IPlayer.cs" />
+    <Compile Include="Logic\Interfaces\IFormPublisher.cs" />
+    <Compile Include="Logic\Interfaces\ISpecialCard.cs" />
+    <Compile Include="Logic\Interfaces\ISubscriber.cs" />
+    <Compile Include="Logic\Player\AI.cs" />
+    <Compile Include="Logic\Player\HumanPlayer.cs" />
+    <Compile Include="Logic\Player\Player.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GameUI.resx">
+      <DependentUpon>GameUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_by_infinite_nova-d6fgjfp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_by_infinite_nova-d6fgjfp1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_by_infinite_nova-d6fgjfp.jpg12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\use this.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usethis1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\face_down_monster_card.jpg" />
+    <Content Include="Resources\GAMEBOARD.png" />
+    <Content Include="Logic\Cards\DeckInfo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
